@@ -143,12 +143,13 @@ function Cast({cast,onBack}){
   return <main className="cast">
     <div className="eyebrow">Identity registry</div>
     <h1>Female cast</h1>
-    <p className="castNote">{cast?.note}</p>\n    {cast?.referenceGalleryDriveUrl && <p><a className="masterLink" href={cast.referenceGalleryDriveUrl} target="_blank" rel="noreferrer">Open Drive reference gallery ↗</a></p>}
+    <p className="castNote">{cast?.note}</p>
+    {cast?.referenceGalleryDriveUrl && <p><a className="masterLink" href={cast.referenceGalleryDriveUrl} target="_blank" rel="noreferrer">Open Drive reference gallery ↗</a></p>}
     <div className="castGrid">
       {(cast?.women||[]).map(w=><article className="card" key={w.name}>
-        <div className={"avatar "+(w.imageUrl?"hasImage":"")} aria-label={w.name+" portrait"}>
-          {w.imageUrl ? <>
-            <img src={w.imageUrl} alt={w.name+" baseline portrait"} onError={e=>{e.currentTarget.style.display="none";e.currentTarget.nextElementSibling.style.display="grid"}}/>
+        <div className={"avatar "+((w.referenceImageUrl||w.imageUrl)?"hasImage":"")} aria-label={w.name+" portrait"}>
+          {(w.referenceImageUrl||w.imageUrl) ? <>
+            <img src={w.referenceImageUrl||w.imageUrl} referrerPolicy="no-referrer" alt={w.name+" visual reference"} onError={e=>{e.currentTarget.style.display="none";e.currentTarget.nextElementSibling.style.display="grid"}}/>
             <span className="avatarFallback">{w.initials}</span>
           </> : w.initials}
         </div>

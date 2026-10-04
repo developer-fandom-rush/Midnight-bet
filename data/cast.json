@@ -1,12 +1,12 @@
 {
-  "note": "Visual-reference names and user-provided source links are stored as reference metadata. Mira and Rhea have generated baselines; Neha has a user-provided selected reference saved in Google Drive. GitHub stores metadata only, not reference-image binaries.",
+  "note": "Real-person visual reference images are now loaded in the Cast UI for comparison. A Drive reference gallery containing all 9 images is also saved in Character Masters/Female Baselines. These are references only; no new images were generated.",
   "women": [
     {
       "name": "Mira Sharma",
       "age": 22,
       "role": "Core six",
       "connection": "Primary heat: Aarav · Cross-wires: Kabir, Dev",
-      "faceStatus": "Approved baseline",
+      "faceStatus": "Reference linked",
       "initials": "MS",
       "filename": "MIRA_BASELINE_MASTER.png",
       "driveLink": "https://drive.google.com/file/d/1gYG8AnB3SP0O_SpQD-X3YGs08QvyvGDp/view?usp=drivesdk",
@@ -15,14 +15,16 @@
       "visualReference": "Kajal Aggarwal",
       "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
       "referenceSourceUrl": "https://in.pinterest.com/pin/kajal-aggarwal--18858892175692309/",
-      "referenceSourceStatus": "User-provided reference link"
+      "referenceSourceStatus": "User-provided reference link",
+      "referenceImageUrl": "https://images.filmibeat.com/ph-big/2026/06/kajal-aggarwal1782814806_0.jpg",
+      "referenceImageStatus": "Loaded in UI"
     },
     {
       "name": "Rhea Kapoor",
       "age": 23,
       "role": "Core six",
       "connection": "Primary heat: Kabir · Cross-wires: Aarav, Dev · Neha’s younger sister",
-      "faceStatus": "Approved baseline",
+      "faceStatus": "Reference linked",
       "initials": "RK",
       "visualReference": "Shruti Haasan",
       "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
@@ -31,74 +33,86 @@
       "imageUrl": "https://drive.google.com/thumbnail?id=191hOj0iMxCb6x_S2TdgI5Bp5QtuX7Nvy&sz=w1200",
       "notes": "Generated fictional baseline inspired by Shruti Haasan's general style/energy; saved in Drive.",
       "referenceSourceUrl": "https://indianexpress.com/about/shruti-haasan/",
-      "referenceSourceStatus": "User-provided reference link"
+      "referenceSourceStatus": "User-provided reference link",
+      "referenceImageUrl": "https://images.filmibeat.com/ph-big/2026/03/shruti-haasan1774004213_1.jpg",
+      "referenceImageStatus": "Loaded in UI"
     },
     {
       "name": "Naina Mehra",
       "age": 22,
       "role": "Core six",
       "connection": "Primary heat: Dev · Cross-wires: Aarav, Kabir",
-      "faceStatus": "Not locked",
+      "faceStatus": "Reference linked",
       "initials": "NM",
       "visualReference": "Kareena Kapoor",
       "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
       "referenceSourceUrl": "https://cinetown.org/people/profile/kareenakapoor",
-      "referenceSourceStatus": "User-provided reference link"
+      "referenceSourceStatus": "User-provided reference link",
+      "referenceImageUrl": "https://cinetown.s3.ap-south-1.amazonaws.com/people/profile_img/1701528307.jpeg",
+      "referenceImageStatus": "Loaded in UI"
     },
     {
       "name": "Ananya Rao",
       "age": 31,
       "role": "Independent interview coach",
       "connection": "Aarav’s tutor / favorite-student chemistry track",
-      "faceStatus": "Not locked",
+      "faceStatus": "Reference linked",
       "initials": "AR",
       "visualReference": "Aishwarya Rai",
       "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
       "referenceSourceUrl": "https://in.pinterest.com/pin/beautiful-womens--198651033541137128/",
-      "referenceSourceStatus": "User-provided reference link"
+      "referenceSourceStatus": "User-provided reference link",
+      "referenceImageUrl": "https://cf-img-a-in.tosshub.com/sites/visualstory/wp/2025/11/aishwaryaraibachchan_arb_1761892138_3755345903352590845_7721562272ITG-1761981306821.jpg?size=%2A%3A900",
+      "referenceImageStatus": "Loaded in UI"
     },
     {
       "name": "Meera Khanna",
       "age": 33,
       "role": "Independent statistics/data tutor",
       "connection": "Kabir’s tutor / favorite-student chemistry track",
-      "faceStatus": "Not locked",
+      "faceStatus": "Reference linked",
       "initials": "MK",
       "visualReference": "Mouni Roy",
       "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
       "referenceSourceUrl": "https://www.zoomtventertainment.com/web-stories/mouni-roys-skincare-routine-is-about-malai-neem-paste-and-more/photostory/100747726.cms",
-      "referenceSourceStatus": "User-provided reference link"
+      "referenceSourceStatus": "User-provided reference link",
+      "referenceImageUrl": "https://images.filmibeat.com/ph-big/2025/02/mouni-roy-to-jennifer-winget-these-tv-actresses-beat-bollywood-heroine-in-looks1739208715_1.jpg",
+      "referenceImageStatus": "Loaded in UI"
     },
     {
       "name": "Shalini Bose",
       "age": 30,
       "role": "Presentation coach",
       "connection": "Dev’s tutor / favorite-student chemistry track",
-      "faceStatus": "Not locked",
+      "faceStatus": "Reference linked",
       "initials": "SB",
       "visualReference": "Disha Patani",
       "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
       "referenceSourceUrl": "https://www.indiatvnews.com/entertainment/bollywood-disha-patani-feels-brand-endorsements-are-very-important-371437",
-      "referenceSourceStatus": "User-provided reference link"
+      "referenceSourceStatus": "User-provided reference link",
+      "referenceImageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/photogallery/202001/7_IT_1580376288658.jpeg?VersionId=ON8g7DjUecypOGGedox7u8fCjwD2_JuF&size=686%3A%2A",
+      "referenceImageStatus": "Loaded in UI"
     },
     {
       "name": "Tara Sethi",
       "age": 28,
       "role": "Family / married-adult thread",
       "connection": "Kabir’s bhabhi · Married to Rohan Sethi",
-      "faceStatus": "Not locked",
+      "faceStatus": "Reference linked",
       "initials": "TS",
       "visualReference": "Priyanka Chopra",
       "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
       "referenceSourceUrl": "https://www.speakerbookingagency.com/talent/priyanka-chopra-jonas",
-      "referenceSourceStatus": "User-provided reference link"
+      "referenceSourceStatus": "User-provided reference link",
+      "referenceImageUrl": "https://2.bp.blogspot.com/-WsYCT91OlL4/WJoA_fRPlYI/AAAAAAAAHys/GY5fx9MxPrQ_FqqRApQ9Ia_xYSd0zotwwCPcB/s640/Priyanka-Chopra-Quantico-Season-2-Photo-shoot%2B%25282%2529.jpg",
+      "referenceImageStatus": "Loaded in UI"
     },
     {
       "name": "Neha Kapoor",
       "age": 29,
       "role": "Family / married-adult thread",
       "connection": "Rhea’s elder sister · Married to Arjun Rao",
-      "faceStatus": "Selected reference",
+      "faceStatus": "Reference linked",
       "initials": "NK",
       "visualReference": "Hiral Radhiya",
       "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
@@ -107,19 +121,24 @@
       "filename": "NEHA_BASELINE_REFERENCE.png",
       "driveLink": "https://drive.google.com/file/d/1yDsDT2OJ4iMXzNc2Zq3J9gfHlrGiAEDM/view?usp=drivesdk",
       "imageUrl": "https://drive.google.com/thumbnail?id=1yDsDT2OJ4iMXzNc2Zq3J9gfHlrGiAEDM&sz=w1200",
-      "notes": "User-provided image selected as Neha Kapoor visual reference and saved in Google Drive."
+      "notes": "User-provided image selected as Neha Kapoor visual reference and saved in Google Drive.",
+      "referenceImageUrl": "https://images.entertainment.ie/person/ymYbrPEVNAEo8uZ6WFwP65kWmQf.jpg?q=high&w=400",
+      "referenceImageStatus": "Loaded in UI"
     },
     {
       "name": "Sana Qureshi",
       "age": 27,
       "role": "Society / married-adult thread",
       "connection": "Married to Mehul Suri · Alumni/society crossover",
-      "faceStatus": "Not locked",
+      "faceStatus": "Reference linked",
       "initials": "SQ",
       "visualReference": "Poonam Pandey",
       "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
       "referenceSourceUrl": "https://mabumbe.com/movies/people/330828/poonam-pandey",
-      "referenceSourceStatus": "User-provided reference link"
+      "referenceSourceStatus": "User-provided reference link",
+      "referenceImageUrl": "https://akm-img-a-in.tosshub.com/aajtak/images/story/202107/poonam-sixteen_nine.jpg?size=1200%3A675",
+      "referenceImageStatus": "Loaded in UI"
     }
-  ]
+  ],
+  "referenceGalleryDriveUrl": "https://docs.google.com/document/d/1lzsZYHKM-7C2_XoK6ieng8RQ5qGv_xvo1m9r4jVWZbg/edit?usp=drivesdk"
 }

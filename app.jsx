@@ -149,12 +149,13 @@ function Cast({cast,onBack}){
       {(cast?.women||[]).map(w=><article className="card" key={w.name}>
         <div className={"avatar "+((w.referenceImageUrl||w.imageUrl)?"hasImage":"")} aria-label={w.name+" portrait"}>
           {(w.referenceImageUrl||w.imageUrl) ? <>
-            <img src={w.referenceImageUrl||w.imageUrl} referrerPolicy="no-referrer" alt={w.name+" visual reference"} onError={e=>{e.currentTarget.style.display="none";e.currentTarget.nextElementSibling.style.display="grid"}}/>
+            <img src={w.referenceImageUrl||w.imageUrl} referrerPolicy="no-referrer" alt={w.name+" visual reference"} style={{transform:`scale(${w.cropScale||1})`,transformOrigin:w.cropOrigin||"center 22%"}} onError={e=>{e.currentTarget.style.display="none";e.currentTarget.nextElementSibling.style.display="grid"}}/>
             <span className="avatarFallback">{w.initials}</span>
           </> : w.initials}
         </div>
         <div className="cardLinks">
-          {w.driveLink && <a className="masterLink" href={w.driveLink} target="_blank" rel="noreferrer">Open master ↗</a>}
+          {w.referenceCropDriveLink && <a className="masterLink" href={w.referenceCropDriveLink} target="_blank" rel="noreferrer">Open cropped reference ↗</a>}
+          {w.driveLink && <a className="masterLink" href={w.driveLink} target="_blank" rel="noreferrer">Open previous master ↗</a>}
           {w.referenceSourceUrl && <a className="masterLink" href={w.referenceSourceUrl} target="_blank" rel="noreferrer">Reference source ↗</a>}
         </div>
         <h3>{w.name}</h3>

@@ -1,0 +1,15 @@
+{
+  "project": "Midnight Bet",
+  "purpose": "User-provided visual reference sources for fictional female character design",
+  "references": [
+    {"character":"Mira Sharma","actressReference":"Kajal Aggarwal","sourceUrl":"https://in.pinterest.com/pin/kajal-aggarwal--18858892175692309/"},
+    {"character":"Rhea Kapoor","actressReference":"Shruti Haasan","sourceUrl":"https://indianexpress.com/about/shruti-haasan/"},
+    {"character":"Naina Mehra","actressReference":"Kareena Kapoor","sourceUrl":"https://cinetown.org/people/profile/kareenakapoor"},
+    {"character":"Ananya Rao","actressReference":"Aishwarya Rai","sourceUrl":"https://in.pinterest.com/pin/beautiful-womens--198651033541137128/"},
+    {"character":"Meera Khanna","actressReference":"Mouni Roy","sourceUrl":"https://www.zoomtventertainment.com/web-stories/mouni-roys-skincare-routine-is-about-malai-neem-paste-and-more/photostory/100747726.cms"},
+    {"character":"Shalini Bose","actressReference":"Disha Patani","sourceUrl":"https://www.indiatvnews.com/entertainment/bollywood-disha-patani-feels-brand-endorsements-are-very-important-371437"},
+    {"character":"Tara Sethi","actressReference":"Priyanka Chopra","sourceUrl":"https://www.speakerbookingagency.com/talent/priyanka-chopra-jonas"},
+    {"character":"Neha Kapoor","actressReference":"Hiral Radadiya","sourceUrl":"https://entertainment.ie/person/hiral-radadiya/"},
+    {"character":"Sana Qureshi","actressReference":"Poonam Pandey","sourceUrl":"https://mabumbe.com/movies/people/330828/poonam-pandey"}
+  ]
+}

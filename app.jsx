@@ -39,7 +39,11 @@ function Cast({cast,onBack}){
     <p className="castNote">{cast?.note}</p>
     <div className="castGrid">
       {(cast?.women||[]).map(w=><article className="card" key={w.name}>
-        <div className="avatar" aria-label={w.name+" placeholder"}>{w.initials}</div>
+        <div className={"avatar "+(w.imageUrl?"hasImage":"")} aria-label={w.name+" portrait"}>
+          {w.imageUrl
+            ? <img src={w.imageUrl} alt={w.name+" baseline portrait"} onError={e=>{e.currentTarget.style.display="none";e.currentTarget.parentElement.classList.remove("hasImage")}}/>
+            : w.initials}
+        </div>
         <h3>{w.name}</h3>
         <div className="small">Age {w.age} · {w.role}</div>
         <div className="connection">{w.connection}</div>

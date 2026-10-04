@@ -1,5 +1,5 @@
 {
-  "note": "Visual-reference names are stored as inspiration metadata only. Mira and Rhea have approved fictional generated baselines in Google Drive; remaining women are pending baseline generation. GitHub does not store celebrity-photo binaries.",
+  "note": "Visual-reference names and user-provided source links are stored as reference metadata. Mira and Rhea have generated baselines; Neha has a user-provided selected reference saved in Google Drive. GitHub stores metadata only, not reference-image binaries.",
   "women": [
     {
       "name": "Mira Sharma",
@@ -13,7 +13,9 @@
       "imageUrl": "https://drive.google.com/thumbnail?id=1gYG8AnB3SP0O_SpQD-X3YGs08QvyvGDp&sz=w1200",
       "notes": "Generated original fictional baseline; saved in Drive. GitHub contains reference metadata only.",
       "visualReference": "Kajal Aggarwal",
-      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
+      "referenceSourceUrl": "https://in.pinterest.com/pin/kajal-aggarwal--18858892175692309/",
+      "referenceSourceStatus": "User-provided reference link"
     },
     {
       "name": "Rhea Kapoor",
@@ -27,7 +29,9 @@
       "filename": "RHEA_BASELINE_MASTER.png",
       "driveLink": "https://drive.google.com/file/d/191hOj0iMxCb6x_S2TdgI5Bp5QtuX7Nvy/view?usp=drivesdk",
       "imageUrl": "https://drive.google.com/thumbnail?id=191hOj0iMxCb6x_S2TdgI5Bp5QtuX7Nvy&sz=w1200",
-      "notes": "Generated fictional baseline inspired by Shruti Haasan's general style/energy; saved in Drive."
+      "notes": "Generated fictional baseline inspired by Shruti Haasan's general style/energy; saved in Drive.",
+      "referenceSourceUrl": "https://indianexpress.com/about/shruti-haasan/",
+      "referenceSourceStatus": "User-provided reference link"
     },
     {
       "name": "Naina Mehra",
@@ -37,7 +41,9 @@
       "faceStatus": "Not locked",
       "initials": "NM",
       "visualReference": "Kareena Kapoor",
-      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
+      "referenceSourceUrl": "https://cinetown.org/people/profile/kareenakapoor",
+      "referenceSourceStatus": "User-provided reference link"
     },
     {
       "name": "Ananya Rao",
@@ -47,7 +53,9 @@
       "faceStatus": "Not locked",
       "initials": "AR",
       "visualReference": "Aishwarya Rai",
-      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
+      "referenceSourceUrl": "https://in.pinterest.com/pin/beautiful-womens--198651033541137128/",
+      "referenceSourceStatus": "User-provided reference link"
     },
     {
       "name": "Meera Khanna",
@@ -57,7 +65,9 @@
       "faceStatus": "Not locked",
       "initials": "MK",
       "visualReference": "Mouni Roy",
-      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
+      "referenceSourceUrl": "https://www.zoomtventertainment.com/web-stories/mouni-roys-skincare-routine-is-about-malai-neem-paste-and-more/photostory/100747726.cms",
+      "referenceSourceStatus": "User-provided reference link"
     },
     {
       "name": "Shalini Bose",
@@ -67,7 +77,9 @@
       "faceStatus": "Not locked",
       "initials": "SB",
       "visualReference": "Disha Patani",
-      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
+      "referenceSourceUrl": "https://www.indiatvnews.com/entertainment/bollywood-disha-patani-feels-brand-endorsements-are-very-important-371437",
+      "referenceSourceStatus": "User-provided reference link"
     },
     {
       "name": "Tara Sethi",
@@ -77,17 +89,25 @@
       "faceStatus": "Not locked",
       "initials": "TS",
       "visualReference": "Priyanka Chopra",
-      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
+      "referenceSourceUrl": "https://www.speakerbookingagency.com/talent/priyanka-chopra-jonas",
+      "referenceSourceStatus": "User-provided reference link"
     },
     {
       "name": "Neha Kapoor",
       "age": 29,
       "role": "Family / married-adult thread",
       "connection": "Rhea’s elder sister · Married to Arjun Rao",
-      "faceStatus": "Not locked",
+      "faceStatus": "Selected reference",
       "initials": "NK",
       "visualReference": "Hiral Radhiya",
-      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
+      "referenceSourceUrl": "https://entertainment.ie/person/hiral-radadiya/",
+      "referenceSourceStatus": "User-provided reference link",
+      "filename": "NEHA_BASELINE_REFERENCE.png",
+      "driveLink": "https://drive.google.com/file/d/1yDsDT2OJ4iMXzNc2Zq3J9gfHlrGiAEDM/view?usp=drivesdk",
+      "imageUrl": "https://drive.google.com/thumbnail?id=1yDsDT2OJ4iMXzNc2Zq3J9gfHlrGiAEDM&sz=w1200",
+      "notes": "User-provided image selected as Neha Kapoor visual reference and saved in Google Drive."
     },
     {
       "name": "Sana Qureshi",
@@ -97,7 +117,9 @@
       "faceStatus": "Not locked",
       "initials": "SQ",
       "visualReference": "Poonam Pandey",
-      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
+      "referenceSourceUrl": "https://mabumbe.com/movies/people/330828/poonam-pandey",
+      "referenceSourceStatus": "User-provided reference link"
     }
   ]
 }

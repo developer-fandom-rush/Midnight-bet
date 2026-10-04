@@ -105,7 +105,10 @@ function Cast({cast,onBack}){
             <span className="avatarFallback">{w.initials}</span>
           </> : w.initials}
         </div>
-        {w.driveLink && <a className="masterLink" href={w.driveLink} target="_blank" rel="noreferrer">Open master ↗</a>}
+        <div className="cardLinks">
+          {w.driveLink && <a className="masterLink" href={w.driveLink} target="_blank" rel="noreferrer">Open master ↗</a>}
+          {w.referenceSourceUrl && <a className="masterLink" href={w.referenceSourceUrl} target="_blank" rel="noreferrer">Reference source ↗</a>}
+        </div>
         <h3>{w.name}</h3>
         <div className="small">Age {w.age} · {w.role}</div>
         {w.visualReference && <div className="small">Visual reference: {w.visualReference}</div>}

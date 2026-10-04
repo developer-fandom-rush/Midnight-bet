@@ -125,7 +125,7 @@ function Reader(){
   const [rawMode,setRawMode]=useState(false);
   const [progress,setProgress]=useState(0);
   const [adult,setAdult]=useState(()=>sessionStorage.getItem("midnightbet-adult")==="yes");
-  const max=index?.episodes?.length||12;
+  const max=index?.episodes?.length||24;
   const [ep,go]=useHashEpisode(max);
 
   useEffect(()=>{
@@ -173,7 +173,7 @@ function Reader(){
       <div className="brand">
         <button className="iconBtn" aria-label="Open episodes" onClick={()=>setDrawer(true)}>☰</button>
         <div className="brandMark">MB</div>
-        <div className="brandText"><strong>Midnight Bet</strong><span>Integrated ARC I</span></div>
+        <div className="brandText"><strong>Midnight Bet</strong><span>{item?.arc===2?"Integrated ARC II":"Integrated ARC I"}</span></div>
       </div>
       <div className="topActions">
         {!castMode && <button className="iconBtn" onClick={()=>setRawMode(v=>!v)}>{rawMode?"Story View":"Raw Lines"}</button>}
@@ -186,8 +186,15 @@ function Reader(){
     <div className="layout">
       {drawer && <div className="drawerBackdrop" onClick={()=>setDrawer(false)}/>}
       <aside className={"sidebar "+(drawer?"open":"")}>
-        <div className="sideTitle">Arc I · 12 Episodes</div>
-        {(index?.episodes||[]).map(x=><button key={x.episode}
+        <div className="sideTitle">ARC I · EP01–EP12</div>
+        {(index?.episodes||[]).filter(x=>x.arc===1).map(x=><button key={x.episode}
+          className={"episodeBtn "+(x.episode===ep?"active":"")}
+          onClick={()=>{go(x.episode);setDrawer(false)}}>
+          <span className="epNum">{String(x.episode).padStart(2,"0")}</span>
+          <span className="epName">{x.title}</span>
+        </button>)}
+        <div className="sideTitle arcBreak">ARC II · EP13–EP24</div>
+        {(index?.episodes||[]).filter(x=>x.arc===2).map(x=><button key={x.episode}
           className={"episodeBtn "+(x.episode===ep?"active":"")}
           onClick={()=>{go(x.episode);setDrawer(false)}}>
           <span className="epNum">{String(x.episode).padStart(2,"0")}</span>
@@ -197,11 +204,11 @@ function Reader(){
 
       <main className="main">
         <section className="hero">
-          <div className="eyebrow">ARC I · Episode {String(ep).padStart(2,"0")}</div>
+          <div className="eyebrow">ARC {item?.arc===2?"II":"I"} · Episode {String(ep).padStart(2,"0")}</div>
           <h1>{item?.title||"Loading…"}</h1>
           <p className="sub">Story view recomposes the source’s short beat-lines into readable prose paragraphs while preserving the original wording and dialogue order.</p>
           <div className="metaRow">
-            <span className="pill">12 episodes</span>
+            <span className="pill">24 episodes · 2 arcs</span>
             <span className="pill">{rawMode?"Raw source lines":"Story reading view"}</span>
             <span className="pill">← / → keyboard navigation</span>
           </div>

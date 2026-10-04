@@ -1,13 +1,17 @@
 {
-  "note": "No approved face master/reference images were found in the Midnight Bet Drive folders. These are identity placeholders only.",
+  "note": "Approved face masters are linked from Google Drive as they are locked. GitHub stores metadata only; image binaries remain in Drive.",
   "women": [
     {
       "name": "Mira Sharma",
       "age": 22,
       "role": "Core six",
       "connection": "Primary heat: Aarav · Cross-wires: Kabir, Dev",
-      "faceStatus": "Not locked",
-      "initials": "MS"
+      "faceStatus": "Approved baseline",
+      "initials": "MS",
+      "filename": "MIRA_BASELINE_MASTER.png",
+      "driveLink": "https://drive.google.com/file/d/1gYG8AnB3SP0O_SpQD-X3YGs08QvyvGDp/view?usp=drivesdk",
+      "imageUrl": "https://drive.google.com/thumbnail?id=1gYG8AnB3SP0O_SpQD-X3YGs08QvyvGDp&sz=w1200",
+      "notes": "Generated original fictional baseline; saved in Drive. GitHub contains reference metadata only."
     },
     {
       "name": "Rhea Kapoor",

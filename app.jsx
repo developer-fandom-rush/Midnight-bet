@@ -144,26 +144,25 @@ function Cast({cast,onBack}){
     <div className="eyebrow">Identity registry</div>
     <h1>Female cast</h1>
     <p className="castNote">{cast?.note}</p>
-    {cast?.referenceGalleryDriveUrl && <p><a className="masterLink" href={cast.referenceGalleryDriveUrl} target="_blank" rel="noreferrer">Open Drive reference gallery ↗</a></p>}
     <div className="castGrid">
-      {(cast?.women||[]).map(w=><article className="card" key={w.name}>
-        <div className={"avatar "+((w.referenceImageUrl||w.imageUrl)?"hasImage":"")} aria-label={w.name+" portrait"}>
-          {(w.referenceImageUrl||w.imageUrl) ? <>
-            <img src={w.referenceImageUrl||w.imageUrl} referrerPolicy="no-referrer" alt={w.name+" visual reference"} style={{transform:`scale(${w.cropScale||1})`,transformOrigin:w.cropOrigin||"center 22%"}} onError={e=>{e.currentTarget.style.display="none";e.currentTarget.nextElementSibling.style.display="grid"}}/>
-            <span className="avatarFallback">{w.initials}</span>
-          </> : w.initials}
-        </div>
-        <div className="cardLinks">
-          {w.referenceCropDriveLink && <a className="masterLink" href={w.referenceCropDriveLink} target="_blank" rel="noreferrer">Open cropped reference ↗</a>}
-          {w.driveLink && <a className="masterLink" href={w.driveLink} target="_blank" rel="noreferrer">Open previous master ↗</a>}
-          {w.referenceSourceUrl && <a className="masterLink" href={w.referenceSourceUrl} target="_blank" rel="noreferrer">Reference source ↗</a>}
-        </div>
-        <h3>{w.name}</h3>
-        <div className="small">Age {w.age} · {w.role}</div>
-        {w.visualReference && <div className="small">Visual reference: {w.visualReference}</div>}
-        <div className="connection">{w.connection}</div>
-        <span className="status">{w.faceStatus}</span>
-      </article>)}
+      {(cast?.women||[]).map(w=>{
+        const imageUrl=w.referenceImageUrl||w.imageUrl
+        const imageLink=w.referenceCropDriveLink||w.driveLink||imageUrl
+        return <article className="card" key={w.name}>
+          <div className={"avatar "+(imageUrl?"hasImage":"")} aria-label={w.name+" portrait"}>
+            {imageUrl ? <>
+              <a href={imageLink} target="_blank" rel="noreferrer" aria-label={"Open "+w.name+" image"}>
+                <img src={imageUrl} referrerPolicy="no-referrer" alt={w.name+" portrait"} style={{transform:`scale(${w.cropScale||1})`,transformOrigin:w.cropOrigin||"center 22%"}} onError={e=>{e.currentTarget.style.display="none";e.currentTarget.parentElement.nextElementSibling.style.display="grid"}}/>
+              </a>
+              <span className="avatarFallback">{w.initials}</span>
+            </> : w.initials}
+          </div>
+          <h3>{w.name}</h3>
+          <div className="small">Age {w.age} · {w.role}</div>
+          <div className="connection">{w.connection}</div>
+          <span className="status">{w.faceStatus}</span>
+        </article>
+      })}
     </div>
     <button className="navBtn" onClick={onBack}>← Back to reader</button>
   </main>

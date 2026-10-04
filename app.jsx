@@ -21,6 +21,66 @@ function useHashEpisode(max){
   return [ep,go];
 }
 
+function cleanLine(text){
+  return String(text||"").replace(/\s+/g," ").trim();
+}
+
+function isDialogue(text){
+  return /^[“"]/.test(text);
+}
+
+function isCue(text){
+  return text.length<=120 && /:$/.test(text);
+}
+
+function isSceneTurn(text){
+  return /^(At \d|By \d|Later\b|Across town\b|Meanwhile\b|That night\b|The next\b|After dinner\b|After the\b|Saturday\b|Sunday\b|The session\b|The reunion\b|Dinner\b)/i.test(text);
+}
+
+function composeStory(paragraphs){
+  const lines=(paragraphs||[]).map(cleanLine).filter(Boolean);
+  const blocks=[];
+  let prose=[];
+
+  const flush=()=>{
+    if(!prose.length) return;
+    blocks.push({type:"prose",text:prose.join(" ")});
+    prose=[];
+  };
+
+  for(let i=0;i<lines.length;i++){
+    const line=lines[i];
+    const next=lines[i+1];
+
+    if(isCue(line) && next && isDialogue(next)){
+      flush();
+      blocks.push({type:"dialogue",text:line+" "+next});
+      i++;
+      continue;
+    }
+
+    if(isDialogue(line)){
+      flush();
+      blocks.push({type:"dialogue",text:line});
+      continue;
+    }
+
+    if(isSceneTurn(line) && prose.length){
+      flush();
+    }
+
+    prose.push(line);
+
+    const chars=prose.reduce((n,x)=>n+x.length,0);
+    if(prose.length>=4 || chars>=480){
+      flush();
+    }
+  }
+
+  flush();
+  return blocks;
+}
+
 function AgeGate({onEnter}){
   return <div className="ageGate">
     <div className="gateCard">
@@ -62,6 +122,7 @@ function Reader(){
   const [episode,setEpisode]=useState(null);
   const [drawer,setDrawer]=useState(false);
   const [castMode,setCastMode]=useState(false);
+  const [rawMode,setRawMode]=useState(false);
   const [progress,setProgress]=useState(0);
   const [adult,setAdult]=useState(()=>sessionStorage.getItem("midnightbet-adult")==="yes");
   const max=index?.episodes?.length||12;
@@ -102,6 +163,7 @@ function Reader(){
   },[ep,max,castMode]);
 
   const item=useMemo(()=>index?.episodes?.find(x=>x.episode===ep),[index,ep]);
+  const storyBlocks=useMemo(()=>composeStory(episode?.paragraphs||[]),[episode]);
 
   if(!adult) return <AgeGate onEnter={()=>{sessionStorage.setItem("midnightbet-adult","yes");setAdult(true)}}/>;
 
@@ -114,6 +176,7 @@ function Reader(){
         <div className="brandText"><strong>Midnight Bet</strong><span>Integrated ARC I</span></div>
       </div>
       <div className="topActions">
+        {!castMode && <button className="iconBtn" onClick={()=>setRawMode(v=>!v)}>{rawMode?"Story View":"Raw Lines"}</button>}
         <button className="iconBtn" onClick={()=>setCastMode(v=>!v)}>{castMode?"Reader":"Cast"}</button>
         {!castMode && <button className="iconBtn" onClick={()=>scrollTo({top:0,behavior:"smooth"})}>↑</button>}
       </div>
@@ -136,22 +199,20 @@ function Reader(){
         <section className="hero">
           <div className="eyebrow">ARC I · Episode {String(ep).padStart(2,"0")}</div>
           <h1>{item?.title||"Loading…"}</h1>
-          <p className="sub">Old friends, new heat. Integrated final edition combining the revised episode prose with restored continuity beats from the canonical Arc I flow.</p>
+          <p className="sub">Story view recomposes the source’s short beat-lines into readable prose paragraphs while preserving the original wording and dialogue order.</p>
           <div className="metaRow">
             <span className="pill">12 episodes</span>
-            <span className="pill">Single-page reader</span>
+            <span className="pill">{rawMode?"Raw source lines":"Story reading view"}</span>
             <span className="pill">← / → keyboard navigation</span>
           </div>
         </section>
 
         {!episode ? <div className="loading">Loading episode…</div> :
-        <article className="reader">
-          {episode.paragraphs.map((p,i)=>{
-            const t=p.trim();
-            const short=t.length<72;
-            const quote=/^[“"]/.test(t);
-            return <p key={i} className={(short?"short ":"")+(quote?"quote":"")}>{p}</p>
-          })}
+        <article className={"reader "+(rawMode?"rawReader":"storyReader")}>
+          {rawMode
+            ? episode.paragraphs.map((p,i)=><p key={i} className="rawLine">{cleanLine(p)}</p>)
+            : storyBlocks.map((b,i)=><p key={i} className={b.type==="dialogue"?"dialogueLine":"storyPara"}>{b.text}</p>)
+          }
         </article>}
 
         <nav className="bottomNav" aria-label="Episode navigation">

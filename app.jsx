@@ -108,6 +108,7 @@ function Cast({cast,onBack}){
         {w.driveLink && <a className="masterLink" href={w.driveLink} target="_blank" rel="noreferrer">Open master ↗</a>}
         <h3>{w.name}</h3>
         <div className="small">Age {w.age} · {w.role}</div>
+        {w.visualReference && <div className="small">Visual reference: {w.visualReference}</div>}
         <div className="connection">{w.connection}</div>
         <span className="status">{w.faceStatus}</span>
       </article>)}

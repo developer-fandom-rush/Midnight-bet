@@ -1,0 +1,77 @@
+{
+  "note": "No approved face master/reference images were found in the Midnight Bet Drive folders. These are identity placeholders only.",
+  "women": [
+    {
+      "name": "Mira Sharma",
+      "age": 22,
+      "role": "Core six",
+      "connection": "Primary heat: Aarav · Cross-wires: Kabir, Dev",
+      "faceStatus": "Not locked",
+      "initials": "MS"
+    },
+    {
+      "name": "Rhea Kapoor",
+      "age": 23,
+      "role": "Core six",
+      "connection": "Primary heat: Kabir · Cross-wires: Aarav, Dev · Neha’s younger sister",
+      "faceStatus": "Not locked",
+      "initials": "RK"
+    },
+    {
+      "name": "Naina Mehra",
+      "age": 22,
+      "role": "Core six",
+      "connection": "Primary heat: Dev · Cross-wires: Aarav, Kabir",
+      "faceStatus": "Not locked",
+      "initials": "NM"
+    },
+    {
+      "name": "Ananya Rao",
+      "age": 31,
+      "role": "Independent interview coach",
+      "connection": "Aarav’s tutor / favorite-student chemistry track",
+      "faceStatus": "Not locked",
+      "initials": "AR"
+    },
+    {
+      "name": "Meera Khanna",
+      "age": 33,
+      "role": "Independent statistics/data tutor",
+      "connection": "Kabir’s tutor / favorite-student chemistry track",
+      "faceStatus": "Not locked",
+      "initials": "MK"
+    },
+    {
+      "name": "Shalini Bose",
+      "age": 30,
+      "role": "Presentation coach",
+      "connection": "Dev’s tutor / favorite-student chemistry track",
+      "faceStatus": "Not locked",
+      "initials": "SB"
+    },
+    {
+      "name": "Tara Sethi",
+      "age": 28,
+      "role": "Family / married-adult thread",
+      "connection": "Kabir’s bhabhi · Married to Rohan Sethi",
+      "faceStatus": "Not locked",
+      "initials": "TS"
+    },
+    {
+      "name": "Neha Kapoor",
+      "age": 29,
+      "role": "Family / married-adult thread",
+      "connection": "Rhea’s elder sister · Married to Arjun Rao",
+      "faceStatus": "Not locked",
+      "initials": "NK"
+    },
+    {
+      "name": "Sana Qureshi",
+      "age": 27,
+      "role": "Society / married-adult thread",
+      "connection": "Married to Mehul Suri · Alumni/society crossover",
+      "faceStatus": "Not locked",
+      "initials": "SQ"
+    }
+  ]
+}

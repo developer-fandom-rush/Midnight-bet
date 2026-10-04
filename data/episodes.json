@@ -1,0 +1,66 @@
+{
+  "arc": "ARC I — Old Friends, New Heat",
+  "edition": "Integrated final — Grok rewrite + continuity restore",
+  "episodes": [
+    {
+      "episode": 1,
+      "title": "Reunion Night",
+      "file": "./data/ep01.json"
+    },
+    {
+      "episode": 2,
+      "title": "Eyes Have Changed",
+      "file": "./data/ep02.json"
+    },
+    {
+      "episode": 3,
+      "title": "Too Close to Call",
+      "file": "./data/ep03.json"
+    },
+    {
+      "episode": 4,
+      "title": "Wedding List",
+      "file": "./data/ep04.json"
+    },
+    {
+      "episode": 5,
+      "title": "Rooftop Secret",
+      "file": "./data/ep05.json"
+    },
+    {
+      "episode": 6,
+      "title": "Rain, Parking, Balcony",
+      "file": "./data/ep06.json"
+    },
+    {
+      "episode": 7,
+      "title": "Holi Colours",
+      "file": "./data/ep07.json"
+    },
+    {
+      "episode": 8,
+      "title": "After the Colour",
+      "file": "./data/ep08.json"
+    },
+    {
+      "episode": 9,
+      "title": "Three Rooms, One Night",
+      "file": "./data/ep09.json"
+    },
+    {
+      "episode": 10,
+      "title": "Sangeet Rehearsal",
+      "file": "./data/ep10.json"
+    },
+    {
+      "episode": 11,
+      "title": "Secrets Multiply",
+      "file": "./data/ep11.json"
+    },
+    {
+      "episode": 12,
+      "title": "The Invitation",
+      "file": "./data/ep12.json"
+    }
+  ]
+}

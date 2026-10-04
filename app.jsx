@@ -40,10 +40,12 @@ function Cast({cast,onBack}){
     <div className="castGrid">
       {(cast?.women||[]).map(w=><article className="card" key={w.name}>
         <div className={"avatar "+(w.imageUrl?"hasImage":"")} aria-label={w.name+" portrait"}>
-          {w.imageUrl
-            ? <img src={w.imageUrl} alt={w.name+" baseline portrait"} onError={e=>{e.currentTarget.style.display="none";e.currentTarget.parentElement.classList.remove("hasImage")}}/>
-            : w.initials}
+          {w.imageUrl ? <>
+            <img src={w.imageUrl} alt={w.name+" baseline portrait"} onError={e=>{e.currentTarget.style.display="none";e.currentTarget.nextElementSibling.style.display="grid"}}/>
+            <span className="avatarFallback">{w.initials}</span>
+          </> : w.initials}
         </div>
+        {w.driveLink && <a className="masterLink" href={w.driveLink} target="_blank" rel="noreferrer">Open master ↗</a>}
         <h3>{w.name}</h3>
         <div className="small">Age {w.age} · {w.role}</div>
         <div className="connection">{w.connection}</div>

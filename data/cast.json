@@ -1,5 +1,5 @@
 {
-  "note": "Approved face masters are linked from Google Drive as they are locked. GitHub stores metadata only; image binaries remain in Drive.",
+  "note": "Visual-reference names are stored as inspiration metadata only. Mira and Rhea have approved fictional generated baselines in Google Drive; remaining women are pending baseline generation. GitHub does not store celebrity-photo binaries.",
   "women": [
     {
       "name": "Mira Sharma",
@@ -11,15 +11,23 @@
       "filename": "MIRA_BASELINE_MASTER.png",
       "driveLink": "https://drive.google.com/file/d/1gYG8AnB3SP0O_SpQD-X3YGs08QvyvGDp/view?usp=drivesdk",
       "imageUrl": "https://drive.google.com/thumbnail?id=1gYG8AnB3SP0O_SpQD-X3YGs08QvyvGDp&sz=w1200",
-      "notes": "Generated original fictional baseline; saved in Drive. GitHub contains reference metadata only."
+      "notes": "Generated original fictional baseline; saved in Drive. GitHub contains reference metadata only.",
+      "visualReference": "Kajal Aggarwal",
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
     },
     {
       "name": "Rhea Kapoor",
       "age": 23,
       "role": "Core six",
       "connection": "Primary heat: Kabir · Cross-wires: Aarav, Dev · Neha’s younger sister",
-      "faceStatus": "Not locked",
-      "initials": "RK"
+      "faceStatus": "Approved baseline",
+      "initials": "RK",
+      "visualReference": "Shruti Haasan",
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica.",
+      "filename": "RHEA_BASELINE_MASTER.png",
+      "driveLink": "https://drive.google.com/file/d/191hOj0iMxCb6x_S2TdgI5Bp5QtuX7Nvy/view?usp=drivesdk",
+      "imageUrl": "https://drive.google.com/thumbnail?id=191hOj0iMxCb6x_S2TdgI5Bp5QtuX7Nvy&sz=w1200",
+      "notes": "Generated fictional baseline inspired by Shruti Haasan's general style/energy; saved in Drive."
     },
     {
       "name": "Naina Mehra",
@@ -27,7 +35,9 @@
       "role": "Core six",
       "connection": "Primary heat: Dev · Cross-wires: Aarav, Kabir",
       "faceStatus": "Not locked",
-      "initials": "NM"
+      "initials": "NM",
+      "visualReference": "Kareena Kapoor",
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
     },
     {
       "name": "Ananya Rao",
@@ -35,7 +45,9 @@
       "role": "Independent interview coach",
       "connection": "Aarav’s tutor / favorite-student chemistry track",
       "faceStatus": "Not locked",
-      "initials": "AR"
+      "initials": "AR",
+      "visualReference": "Aishwarya Rai",
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
     },
     {
       "name": "Meera Khanna",
@@ -43,7 +55,9 @@
       "role": "Independent statistics/data tutor",
       "connection": "Kabir’s tutor / favorite-student chemistry track",
       "faceStatus": "Not locked",
-      "initials": "MK"
+      "initials": "MK",
+      "visualReference": "Mouni Roy",
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
     },
     {
       "name": "Shalini Bose",
@@ -51,7 +65,9 @@
       "role": "Presentation coach",
       "connection": "Dev’s tutor / favorite-student chemistry track",
       "faceStatus": "Not locked",
-      "initials": "SB"
+      "initials": "SB",
+      "visualReference": "Disha Patani",
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
     },
     {
       "name": "Tara Sethi",
@@ -59,7 +75,9 @@
       "role": "Family / married-adult thread",
       "connection": "Kabir’s bhabhi · Married to Rohan Sethi",
       "faceStatus": "Not locked",
-      "initials": "TS"
+      "initials": "TS",
+      "visualReference": "Priyanka Chopra",
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
     },
     {
       "name": "Neha Kapoor",
@@ -67,7 +85,9 @@
       "role": "Family / married-adult thread",
       "connection": "Rhea’s elder sister · Married to Arjun Rao",
       "faceStatus": "Not locked",
-      "initials": "NK"
+      "initials": "NK",
+      "visualReference": "Hiral Radhiya",
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
     },
     {
       "name": "Sana Qureshi",
@@ -75,7 +95,9 @@
       "role": "Society / married-adult thread",
       "connection": "Married to Mehul Suri · Alumni/society crossover",
       "faceStatus": "Not locked",
-      "initials": "SQ"
+      "initials": "SQ",
+      "visualReference": "Poonam Pandey",
+      "referenceNote": "Visual inspiration only; fictional original character, not an exact replica."
     }
   ]
 }

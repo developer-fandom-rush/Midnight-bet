@@ -1,0 +1,32 @@
+{
+  "version": "Arc II Rewrite V3.1",
+  "branch": "arc2-rewrite-v3",
+  "hardRules": [
+    "x active female characters in an episode = exactly x acts.",
+    "Each act has one female as the primary POV/route focus.",
+    "A female may be mentioned outside her act, but her major decision/state-change belongs to her own act.",
+    "Secondary women are active characters with independent desire, decisions, information and consequences; never decorative jealousy props.",
+    "Private setups use ordinary reason -> private geography -> pressure -> control valve -> consequence.",
+    "Private geography is a pressure condition, not automatic escalation.",
+    "Do not repeatedly narrate or manufacture boundaries. Use natural dialogue, action, environment and aftermath.",
+    "Major payoff should be protagonist-authored where possible: choose, initiate, redirect, redesign, restart or end.",
+    "Every act must leave a measurable state change that carries forward.",
+    "DHIKA contributes craft architecture only. Do not copy DHIKA characters, prose, locations or plot events."
+  ],
+  "episode13": {
+    "activeWomen": [
+      "Mira Sharma",
+      "Rhea Kapoor",
+      "Naina Mehra",
+      "Neha Kapoor"
+    ],
+    "actCount": 4,
+    "title": "Four Closed Doors",
+    "actJobs": [
+      "Mira: deliberately authors a kiss and its exit.",
+      "Rhea: admits attraction without converting it into action.",
+      "Naina: converts accidental proximity into deliberate continuation, then exits on environment change.",
+      "Neha: marriage becomes informed about Arjun-Rhea attraction; Neha gains independent jealousy/curiosity state."
+    ]
+  }
+}

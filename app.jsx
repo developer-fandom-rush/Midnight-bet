@@ -65,65 +65,13 @@ function composeStory(paragraphs){
       continue;
     }
 
-    if(isSceneTurn(line) && prose.length){
-      flush();
-    }
-
+    if(isSceneTurn(line) && prose.length) flush();
     prose.push(line);
 
     const chars=prose.reduce((n,x)=>n+x.length,0);
-    if(prose.length>=4 || chars>=480){
-      flush();
-    }
+    if(prose.length>=4 || chars>=480) flush();
   }
 
-  flush();
-  return blocks;
-}
-
-const EP1_SPEAKERS={
-  1:"Ananya",9:"Ananya",16:"Ananya",17:"Aarav",18:"Ananya",19:"Aarav",20:"Ananya",22:"Aarav",25:"Ananya",
-  33:"Kabir",35:"Aarav",36:"Kabir",37:"Aarav",38:"Kabir",
-  57:"Arjun",59:"Rhea",60:"Arjun",62:"Rhea",
-  76:"Tara",78:"Kabir",79:"Tara",89:"Tara",91:"Kabir",92:"Tara",101:"Tara",102:"Kabir",103:"Tara",104:"Kabir",105:"Tara",107:"Kabir",109:"Tara",
-  127:"Naina",129:"Dev",130:"Naina",131:"Dev",132:"Naina",
-  145:"Kabir",146:"Rhea",147:"Kabir",
-  172:"Sana",174:"Aarav",179:"Naina",181:"Mira",182:"Naina",
-  192:"Kabir",194:"Aarav",210:"Tara",212:"Kabir",213:"Tara",
-  259:"Kabir",261:"Aarav",265:"Aarav",268:"Mira",287:"Neha",
-  310:"Aarav",312:"Mira",313:"Aarav",
-  332:"Dev",334:"Naina",335:"Dev",336:"Naina",
-  342:"Tara",344:"Kabir",345:"Tara",346:"Kabir",347:"Tara",
-  361:"Rhea",363:"Kabir",366:"Rhea",
-  385:"Rhea",387:"Arjun",388:"Rhea",392:"Arjun",395:"Neha",397:"Rhea",
-  420:"Ananya",429:"Shalini"
-};
-const EP1_CUES=new Set([191,193,258,341,384,419,428]);
-const EP1_SCENES=new Set([26,40,67,113,155,217,253,296,339,369,399,415]);
-
-function composeEpisode1(paragraphs){
-  const lines=(paragraphs||[]).map(cleanLine);
-  const blocks=[];
-  let prose=[];
-  const flush=()=>{
-    if(!prose.length) return;
-    blocks.push({type:"prose",text:prose.join(" ")});
-    prose=[];
-  };
-  for(let i=0;i<lines.length;i++){
-    const line=lines[i];
-    if(!line) continue;
-    if(EP1_SCENES.has(i)){ flush(); blocks.push({type:"break"}); }
-    if(EP1_CUES.has(i)) continue;
-    if(isDialogue(line)){
-      flush();
-      blocks.push({type:"dialogue",speaker:EP1_SPEAKERS[i]||"",text:line});
-      continue;
-    }
-    prose.push(line);
-    const chars=prose.reduce((n,x)=>n+x.length+1,0);
-    if(chars>=650) flush();
-  }
   flush();
   return blocks;
 }
@@ -146,8 +94,8 @@ function Cast({cast,onBack}){
     <p className="castNote">{cast?.note}</p>
     <div className="castGrid">
       {(cast?.women||[]).map(w=>{
-        const imageUrl=w.referenceImageUrl||w.imageUrl
-        const imageLink=w.referenceCropDriveLink||w.driveLink||imageUrl
+        const imageUrl=w.referenceImageUrl||w.imageUrl;
+        const imageLink=w.referenceCropDriveLink||w.driveLink||imageUrl;
         return <article className="card" key={w.name}>
           <div className={"avatar "+(imageUrl?"hasImage":"")} aria-label={w.name+" portrait"}>
             {imageUrl ? <>
@@ -166,6 +114,150 @@ function Cast({cast,onBack}){
     </div>
     <button className="navBtn" onClick={onBack}>← Back to reader</button>
   </main>
+}
+
+function reviewKey(kind,id){ return kind+":"+id; }
+
+function applyFlags(text,flags,decisions){
+  let next=String(text||"");
+  (flags||[]).forEach(f=>{
+    const decision=decisions[reviewKey("flag",f.id)];
+    if(decision==="keep") return;
+    next=next.replace(f.from,f.to??"");
+  });
+  return next.replace(/\s+([,.;!?])/g,"$1").replace(/ {2,}/g," ").trim();
+}
+
+function ProposalText({text,flags}){
+  const active=(flags||[]).map(f=>({f,idx:text.indexOf(f.from)})).filter(x=>x.idx>=0).sort((a,b)=>a.idx-b.idx);
+  if(!active.length) return <>{text}</>;
+  const parts=[];
+  let cursor=0;
+  active.forEach(({f,idx},n)=>{
+    if(idx<cursor) return;
+    if(idx>cursor) parts.push(<React.Fragment key={"t"+n}>{text.slice(cursor,idx)}</React.Fragment>);
+    parts.push(<mark key={f.id} className="deleteHighlight" title={f.reason}>{f.from}</mark>);
+    cursor=idx+f.from.length;
+  });
+  if(cursor<text.length) parts.push(<React.Fragment key="tail">{text.slice(cursor)}</React.Fragment>);
+  return <>{parts}</>;
+}
+
+function ReviewPanel({paragraphId,review,decisions,setDecision}){
+  const updateDecision=decisions[reviewKey("update",paragraphId)]||"pending";
+  const cleaned=applyFlags(review.proposal,review.flags,decisions);
+  return <aside className={"reviewPanel "+updateDecision}>
+    <div className="reviewHeader">
+      <div>
+        <span className="reviewZone">{review.zone}</span>
+        <strong>{review.label}</strong>
+      </div>
+      <span className={"reviewVerdict "+updateDecision}>{updateDecision==="accept"?"Accepted":updateDecision==="reject"?"Rejected":"Decision pending"}</span>
+    </div>
+
+    <div className="reviewBlock grokBlock">
+      <div className="reviewBlockLabel">Grok mechanism proposal</div>
+      <p className="proposalText"><ProposalText text={review.proposal} flags={review.flags}/></p>
+    </div>
+
+    {!!review.flags?.length && <div className="flagList">
+      {review.flags.map(f=>{
+        const choice=decisions[reviewKey("flag",f.id)]||"pending";
+        return <div className="flagCard" key={f.id}>
+          <div className="flagText"><span className="flagLabel">RED FLAG</span><del>{f.from}</del></div>
+          <div className="flagReason">{f.reason}</div>
+          {f.to && <div className="replacement"><span>Suggested replacement:</span> {f.to}</div>}
+          <div className="miniActions">
+            <button className={choice==="keep"?"choiceBtn activeKeep":"choiceBtn"} onClick={()=>setDecision(reviewKey("flag",f.id),"keep")}>Keep</button>
+            <button className={choice==="remove"?"choiceBtn activeRemove":"choiceBtn"} onClick={()=>setDecision(reviewKey("flag",f.id),"remove")}>{f.to?"Replace":"Remove"}</button>
+          </div>
+        </div>
+      })}
+    </div>}
+
+    <div className="reviewBlock suggestionBlock">
+      <div className="reviewBlockLabel">GPT merge suggestion · {review.verdict}</div>
+      <p className="suggestionNote">{review.gptNote}</p>
+      <p className="cleanPreview">{cleaned}</p>
+    </div>
+
+    <div className="reviewActions">
+      <button className={updateDecision==="accept"?"reviewAction accept selected":"reviewAction accept"} onClick={()=>setDecision(reviewKey("update",paragraphId),"accept")}>Accept update</button>
+      <button className={updateDecision==="reject"?"reviewAction reject selected":"reviewAction reject"} onClick={()=>setDecision(reviewKey("update",paragraphId),"reject")}>Reject · keep V4</button>
+    </div>
+  </aside>
+}
+
+function EpisodeOneReview({episode}){
+  const storageKey="midnightbet-e01-v41-review";
+  const [decisions,setDecisions]=useState(()=>{
+    try{return JSON.parse(localStorage.getItem(storageKey)||"{}")}catch{return {}}
+  });
+  useEffect(()=>{localStorage.setItem(storageKey,JSON.stringify(decisions));},[decisions]);
+  const setDecision=(key,value)=>setDecisions(prev=>({...prev,[key]:value}));
+
+  const reviews=episode?.reviewSuggestions||{};
+  const reviewIds=Object.keys(reviews);
+  const accepted=reviewIds.filter(id=>decisions[reviewKey("update",id)]==="accept").length;
+  const rejected=reviewIds.filter(id=>decisions[reviewKey("update",id)]==="reject").length;
+  const pending=reviewIds.length-accepted-rejected;
+  const flagTotal=reviewIds.reduce((n,id)=>n+(reviews[id].flags?.length||0),0);
+  const flagResolved=reviewIds.reduce((n,id)=>n+(reviews[id].flags||[]).filter(f=>decisions[reviewKey("flag",f.id)]==="keep"||decisions[reviewKey("flag",f.id)]==="remove").length,0);
+
+  const jump=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth",block:"start"});
+  const reset=()=>{
+    if(confirm("Reset all Episode 01 review choices in this browser?")) setDecisions({});
+  };
+
+  return <>
+    <section className="reviewDashboard">
+      <div className="reviewIntro">
+        <div className="eyebrow">ARC I · EP01 · V4.1 REVIEW MODE</div>
+        <h2>Scene-by-scene final pass</h2>
+        <p>Read the V4 episode in full. Only Grok/GPT merge zones are annotated. Yellow shows a proposed deepening; red marks details I recommend removing or replacing. Your choices stay in this browser until we commit the final episode.</p>
+      </div>
+      <div className="reviewStats">
+        <div><strong>{accepted}</strong><span>accepted</span></div>
+        <div><strong>{rejected}</strong><span>rejected</span></div>
+        <div><strong>{pending}</strong><span>pending</span></div>
+        <div><strong>{flagResolved}/{flagTotal}</strong><span>red flags decided</span></div>
+      </div>
+      <button className="resetBtn" onClick={reset}>Reset review choices</button>
+    </section>
+
+    <nav className="sceneIndex" aria-label="Episode 01 scene index">
+      {(episode.acts||[]).map(act=><div className="actIndex" key={act.id}>
+        <button className="actJump" onClick={()=>jump(act.id)}>{act.title}</button>
+        <div className="sceneChips">
+          {act.scenes.map((s,i)=><button key={s.id} onClick={()=>jump(s.id)}>{String(i+1).padStart(2,"0")} · {s.title}</button>)}
+        </div>
+      </div>)}
+    </nav>
+
+    <article className="reader storyReader structuredReader">
+      {(episode.acts||[]).map(act=><section className="actSection" id={act.id} key={act.id}>
+        <div className="actHeading">
+          <div className="eyebrow">Episode 01</div>
+          <h2>{act.title}</h2>
+        </div>
+        {act.scenes.map((scene,sceneIndex)=><section className="sceneSection" id={scene.id} key={scene.id}>
+          <div className="sceneHeading">
+            <span>Scene {String(sceneIndex+1).padStart(2,"0")}</span>
+            <h3>{scene.title}</h3>
+          </div>
+          {scene.paragraphs.map(p=>{
+            const review=reviews[p.id];
+            const decision=decisions[reviewKey("update",p.id)]||"pending";
+            const text=review && decision==="accept" ? applyFlags(review.proposal,review.flags,decisions) : p.text;
+            return <React.Fragment key={p.id}>
+              <p className={"storyPara "+(review?"reviewTarget "+decision:"")}>{text}</p>
+              {review && <ReviewPanel paragraphId={p.id} review={review} decisions={decisions} setDecision={setDecision}/>}
+            </React.Fragment>
+          })}
+        </section>)}
+      </section>)}
+    </article>
+  </>;
 }
 
 function Reader(){
@@ -190,7 +282,7 @@ function Reader(){
     if(!index) return;
     const item=index.episodes.find(x=>x.episode===ep)||index.episodes[0];
     setEpisode(null);
-    fetch(item.file).then(r=>r.json()).then(setEpisode);
+    fetch(item.file+"?v="+Date.now()).then(r=>r.json()).then(setEpisode);
   },[index,ep]);
 
   useEffect(()=>{
@@ -214,7 +306,7 @@ function Reader(){
   },[ep,max,castMode]);
 
   const item=useMemo(()=>index?.episodes?.find(x=>x.episode===ep),[index,ep]);
-  const storyBlocks=useMemo(()=>ep===1?composeEpisode1(episode?.paragraphs||[]):composeStory(episode?.paragraphs||[]),[episode,ep]);
+  const storyBlocks=useMemo(()=>ep===1?[]:composeStory(episode?.paragraphs||[]),[episode,ep]);
 
   if(!adult) return <AgeGate onEnter={()=>{sessionStorage.setItem("midnightbet-adult","yes");setAdult(true)}}/>;
 
@@ -241,7 +333,7 @@ function Reader(){
           className={"episodeBtn "+(x.episode===ep?"active":"")}
           onClick={()=>{go(x.episode);setDrawer(false)}}>
           <span className="epNum">{String(x.episode).padStart(2,"0")}</span>
-          <span className="epName">{x.title}</span>
+          <span className="epName">{x.title}{x.episode===1?<small className="reviewTag">V4 review</small>:null}</span>
         </button>)}
         <div className="sideTitle arcBreak">ARC II · EP13–EP24</div>
         {(index?.episodes||[]).filter(x=>x.arc===2).map(x=><button key={x.episode}
@@ -256,24 +348,25 @@ function Reader(){
         <section className="hero">
           <div className="eyebrow">ARC {item?.arc===2?"II":"I"} · Episode {String(ep).padStart(2,"0")}</div>
           <h1>{item?.title||"Loading…"}</h1>
-          <p className="sub">Reader edition: scene prose, named dialogue and clean episode navigation.</p>
+          <p className="sub">{ep===1?"V4 story + Grok mechanism review. Scene-by-scene decisions are interactive and saved locally in your browser.":"Reader edition: scene prose, named dialogue and clean episode navigation."}</p>
           <div className="metaRow">
             <span className="pill">24 episodes · 2 arcs</span>
-            <span className="pill">Reader edition</span>
+            <span className="pill">{ep===1?"V4.1 review candidate":"Reader edition"}</span>
             <span className="pill">← / → keyboard navigation</span>
           </div>
         </section>
 
         {!episode ? <div className="loading">Loading episode…</div> :
-        <article className="reader storyReader">
-          {storyBlocks.map((b,i)=>
-            b.type==="break"
-              ? <div key={i} className="sceneBreak" aria-hidden="true">◆</div>
-              : b.type==="dialogue"
-                ? <p key={i} className="dialogueLine">{b.speaker&&<span className="speaker">{b.speaker}</span>}{b.text}</p>
-                : <p key={i} className="storyPara">{b.text}</p>
-          )}
-        </article>}
+          ep===1 && episode.acts
+            ? <EpisodeOneReview episode={episode}/>
+            : <article className="reader storyReader">
+                {storyBlocks.map((b,i)=>
+                  b.type==="dialogue"
+                    ? <p key={i} className="dialogueLine">{b.text}</p>
+                    : <p key={i} className="storyPara">{b.text}</p>
+                )}
+              </article>
+        }
 
         <nav className="bottomNav" aria-label="Episode navigation">
           <button className="navBtn" disabled={ep<=1} onClick={()=>go(ep-1)}>← Previous</button>

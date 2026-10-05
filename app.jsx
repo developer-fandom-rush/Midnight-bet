@@ -209,6 +209,15 @@ function EpisodeOneReview({episode}){
     if(confirm("Reset all Episode 01 review choices in this browser?")) setDecisions({});
   };
 
+  const lineMap=useMemo(()=>{
+    const map={};
+    let n=1;
+    (episode.acts||[]).forEach(act=>act.scenes.forEach(scene=>scene.paragraphs.forEach(p=>{
+      map[p.id]=n++;
+    })));
+    return map;
+  },[episode]);
+
   return <>
     <section className="reviewDashboard">
       <div className="reviewIntro">
@@ -249,8 +258,12 @@ function EpisodeOneReview({episode}){
             const review=reviews[p.id];
             const decision=decisions[reviewKey("update",p.id)]||"pending";
             const text=review && decision==="accept" ? applyFlags(review.proposal,review.flags,decisions) : p.text;
+            const lineNo="L"+String(lineMap[p.id]||0).padStart(3,"0");
             return <React.Fragment key={p.id}>
-              <p className={"storyPara "+(review?"reviewTarget "+decision:"")}>{text}</p>
+              <div className={"numberedPara "+(review?"reviewTarget "+decision:"")}>
+                <span className="lineNo" aria-label={"Line "+lineNo.slice(1)}>{lineNo}</span>
+                <p className="storyPara">{text}</p>
+              </div>
               {review && <ReviewPanel paragraphId={p.id} review={review} decisions={decisions} setDecision={setDecision}/>}
             </React.Fragment>
           })}

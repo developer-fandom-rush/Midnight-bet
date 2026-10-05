@@ -33,7 +33,11 @@ function isCue(text){
   return text.length<=120 && /:$/.test(text);
 }
 
-function isActHeading(text){\n  return /^ACT\\s+(I|II|III)\\s+—/i.test(text);\n}\n\nfunction isSceneTurn(text){
+function isActHeading(text){
+  return /^ACT\s+(I|II|III)\s+—/i.test(text);
+}
+
+function isSceneTurn(text){
   return /^(At \d|By \d|Later\b|Across town\b|Meanwhile\b|That night\b|The next\b|After dinner\b|After the\b|Saturday\b|Sunday\b|The session\b|The reunion\b|Dinner\b)/i.test(text);
 }
 
@@ -52,7 +56,13 @@ function composeStory(paragraphs){
     const line=lines[i];
     const next=lines[i+1];
 
-    if(isActHeading(line)){\n      flush();\n      blocks.push({type:"act",text:line});\n      continue;\n    }\n\n    if(isCue(line) && next && isDialogue(next)){
+    if(isActHeading(line)){
+      flush();
+      blocks.push({type:"act",text:line});
+      continue;
+    }
+
+    if(isCue(line) && next && isDialogue(next)){
       flush();
       blocks.push({type:"dialogue",text:line+" "+next});
       i++;
@@ -382,9 +392,11 @@ function Reader(){
             ? <EpisodeOneReview episode={episode}/>
             : <article className="reader storyReader">
                 {storyBlocks.map((b,i)=>
-                  b.type==="dialogue"
-                    ? <p key={i} className="dialogueLine">{b.text}</p>
-                    : <p key={i} className="storyPara">{b.text}</p>
+                  b.type==="act"
+                    ? <div key={i} className="actHeading"><div className="eyebrow">Episode {String(ep).padStart(2,"0")}</div><h2>{b.text}</h2></div>
+                    : b.type==="dialogue"
+                      ? <p key={i} className="dialogueLine">{b.text}</p>
+                      : <p key={i} className="storyPara">{b.text}</p>
                 )}
               </article>
         }

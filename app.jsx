@@ -33,7 +33,7 @@ function isCue(text){
   return text.length<=120 && /:$/.test(text);
 }
 
-function isSceneTurn(text){
+function isActHeading(text){\n  return /^ACT\\s+(I|II|III)\\s+—/i.test(text);\n}\n\nfunction isSceneTurn(text){
   return /^(At \d|By \d|Later\b|Across town\b|Meanwhile\b|That night\b|The next\b|After dinner\b|After the\b|Saturday\b|Sunday\b|The session\b|The reunion\b|Dinner\b)/i.test(text);
 }
 
@@ -52,7 +52,7 @@ function composeStory(paragraphs){
     const line=lines[i];
     const next=lines[i+1];
 
-    if(isCue(line) && next && isDialogue(next)){
+    if(isActHeading(line)){\n      flush();\n      blocks.push({type:"act",text:line});\n      continue;\n    }\n\n    if(isCue(line) && next && isDialogue(next)){
       flush();
       blocks.push({type:"dialogue",text:line+" "+next});
       i++;
@@ -354,7 +354,7 @@ function Reader(){
           className={"episodeBtn "+(x.episode===ep?"active":"")}
           onClick={()=>{go(x.episode);setDrawer(false)}}>
           <span className="epNum">{String(x.episode).padStart(2,"0")}</span>
-          <span className="epName">{x.title}{x.episode===1?<small className="reviewTag">V4 review</small>:null}</span>
+          <span className="epName">{x.title}{x.episode===1?<small className="reviewTag">V4 review</small>:x.episode===2?<small className="reviewTag">V4 reader</small>:null}</span>
         </button>)}
         <div className="sideTitle arcBreak">ARC II · EP13–EP24</div>
         {(index?.episodes||[]).filter(x=>x.arc===2).map(x=><button key={x.episode}
@@ -369,10 +369,10 @@ function Reader(){
         <section className="hero">
           <div className="eyebrow">ARC {item?.arc===2?"II":"I"} · Episode {String(ep).padStart(2,"0")}</div>
           <h1>{item?.title||"Loading…"}</h1>
-          <p className="sub">{ep===1?"V4 story + Grok mechanism review. Scene-by-scene decisions are interactive and saved locally in your browser.":"Reader edition: scene prose, named dialogue and clean episode navigation."}</p>
+          <p className="sub">{ep===1?"V4 story + Grok mechanism review. Scene-by-scene decisions are interactive and saved locally in your browser.":ep===2?"V4 reader edition with approved mechanism deepening, full three-act prose and locked continuity.":"Reader edition: scene prose, named dialogue and clean episode navigation."}</p>
           <div className="metaRow">
             <span className="pill">24 episodes · 2 arcs</span>
-            <span className="pill">{ep===1?"V4.1 review candidate":"Reader edition"}</span>
+            <span className="pill">{ep===1?"V4.1 review candidate":ep===2?"V4 reader edition":"Reader edition"}</span>
             <span className="pill">← / → keyboard navigation</span>
           </div>
         </section>

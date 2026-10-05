@@ -251,7 +251,9 @@ function EpisodeOneReview({episode}){
         </div>
         {act.scenes.map((scene,sceneIndex)=><section className="sceneSection" id={scene.id} key={scene.id}>
           <div className="sceneHeading">
-            <span>Scene {String(sceneIndex+1).padStart(2,"0")}</span>
+            <span>
+              Scene {String(sceneIndex+1).padStart(2,"0")} · L{String(lineMap[scene.paragraphs[0]?.id]||0).padStart(3,"0")}–L{String(lineMap[scene.paragraphs[scene.paragraphs.length-1]?.id]||0).padStart(3,"0")}
+            </span>
             <h3>{scene.title}</h3>
           </div>
           {scene.paragraphs.map(p=>{

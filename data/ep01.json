@@ -561,5 +561,28 @@
         }
       ]
     }
+  },
+  "reviewSelection": {
+    "version": "user-selection-2026-10-05-v1",
+    "summary": "User selected Grok for Zones 1, 2, 4, 5 and 6; GPT/V4 for Zones 3 and 7.",
+    "decisions": {
+      "update:p14": "accept",
+      "flag:z1-distance": "keep",
+      "flag:z1-heel": "keep",
+      "flag:z1-vector": "keep",
+      "flag:z1-hand": "keep",
+      "flag:z1-release": "keep",
+      "update:p21": "accept",
+      "flag:z2-span": "keep",
+      "flag:z2-permission": "keep",
+      "update:p37": "reject",
+      "update:p39": "accept",
+      "update:p58": "accept",
+      "flag:z5-ledger": "keep",
+      "update:p69": "accept",
+      "flag:z6-newcontact": "keep",
+      "flag:z6-orientation": "keep",
+      "update:p70": "reject"
+    }
   }
 }

@@ -39,3 +39,12 @@ button{font:inherit}.progress{position:fixed;z-index:1000;top:0;left:0;height:3p
   .reviewDashboard{display:block;padding:0 22px 14px}.reviewStats{margin-top:10px;grid-template-columns:repeat(2,1fr)}.resetBtn{margin-top:10px}
   .sceneIndex{padding:0 22px}.structuredReader{padding-top:0}.actHeading h2{font-size:29px}.sceneHeading{padding:12px}.reviewHeader{display:block}.reviewVerdict{display:inline-block;margin-top:9px}.reviewTarget{padding:12px}.reviewPanel{margin-bottom:26px}
 }
+
+.numberedPara{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:start;margin:0 0 15px}
+.numberedPara .storyPara{margin:0}
+.lineNo{position:sticky;top:82px;display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:5px 6px;border:1px solid #493943;border-radius:9px;background:#171319;color:#c9b9c3;font:700 10px/1 "DM Sans",sans-serif;letter-spacing:.08em;font-variant-numeric:tabular-nums;user-select:all}
+.numberedPara.reviewTarget{margin-bottom:15px}
+@media(max-width:820px){
+  .numberedPara{grid-template-columns:46px minmax(0,1fr);gap:9px}
+  .lineNo{top:76px;font-size:9px;padding:5px 4px}
+}

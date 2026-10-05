@@ -189,11 +189,16 @@ function ReviewPanel({paragraphId,review,decisions,setDecision}){
 }
 
 function EpisodeOneReview({episode}){
-  const storageKey="midnightbet-e01-v41-review";
+  const selectionVersion=episode?.reviewSelection?.version||"base";
+  const storageKey="midnightbet-e01-v41-review:"+selectionVersion;
+  const defaultDecisions=episode?.reviewSelection?.decisions||{};
   const [decisions,setDecisions]=useState(()=>{
-    try{return JSON.parse(localStorage.getItem(storageKey)||"{}")}catch{return {}}
+    try{
+      const saved=JSON.parse(localStorage.getItem(storageKey)||"null");
+      return saved&&typeof saved==="object"?{...defaultDecisions,...saved}:{...defaultDecisions};
+    }catch{return {...defaultDecisions}}
   });
-  useEffect(()=>{localStorage.setItem(storageKey,JSON.stringify(decisions));},[decisions]);
+  useEffect(()=>{localStorage.setItem(storageKey,JSON.stringify(decisions));},[decisions,storageKey]);
   const setDecision=(key,value)=>setDecisions(prev=>({...prev,[key]:value}));
 
   const reviews=episode?.reviewSuggestions||{};
@@ -223,7 +228,8 @@ function EpisodeOneReview({episode}){
       <div className="reviewIntro">
         <div className="eyebrow">ARC I · EP01 · V4.1 REVIEW MODE</div>
         <h2>Scene-by-scene final pass</h2>
-        <p>Read the V4 episode in full. Only Grok/GPT merge zones are annotated. Yellow shows a proposed deepening; red marks details I recommend removing or replacing. Your choices stay in this browser until we commit the final episode.</p>
+        <p>Read the V4 episode in full. Your selected merge is pre-applied: <strong>Grok Z1, Z2, Z4, Z5, Z6</strong> and <strong>GPT/V4 Z3, Z7</strong>. You can still change any decision below. Yellow shows Grok’s proposal; red shows previously disputed details, including details you chose to keep.</p>
+        <div className="selectionSummary">Selected: Grok 1 · 2 · 4 · 5 · 6 <span>｜</span> GPT/V4 3 · 7</div>
       </div>
       <div className="reviewStats">
         <div><strong>{accepted}</strong><span>accepted</span></div>

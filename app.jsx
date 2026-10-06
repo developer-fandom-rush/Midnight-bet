@@ -34,7 +34,7 @@ function isCue(text){
 }
 
 function isActHeading(text){
-  return /^ACT\s+(I|II|III)\s+—/i.test(text);
+  return /^(PROLOGUE\s+—|ACT\s+(I|II|III)\s+—|EPISODE\s+01\s+—\s+V5(?:\.1)?\s+END STATE)/i.test(text);
 }
 
 function isSceneTurn(text){
@@ -91,18 +91,18 @@ function StoryContext({compact=false}){
   return <section className={"storyContext "+(compact?"compact":"")}>
     <div className="eyebrow">{compact?"Who’s who · continuity":"Prologue · who’s who"}</div>
     <h2>{compact?"Relationship map":"Before Reunion Night"}</h2>
-    <p className="contextLead">The core six are adult old friends. The three pairings below are attraction/history routes, <strong>not marriages</strong>.</p>
+    <p className="contextLead">The core six are adult old friends who became <strong>three married couples</strong>. Their marriages are the intimate baseline against which outside attention and secrecy are measured.</p>
     <div className="coreSixGrid">
-      <div className="relationCard"><strong>Mira Sharma, 22 ↔ Aarav Malhotra, 23</strong><span>School rivalry, old history, mutual attraction. Not married.</span></div>
-      <div className="relationCard"><strong>Rhea Kapoor, 23 ↔ Kabir Sethi, 24</strong><span>Old-friend banter, jealousy and familiar chemistry. Not married.</span></div>
-      <div className="relationCard"><strong>Naina Mehra, 22 ↔ Dev Arora, 23</strong><span>Quiet comfort, direct communication and consent-first chemistry. Not married.</span></div>
+      <div className="relationCard"><strong>Mira Sharma, 22 ↔ Aarav Malhotra, 23</strong><span>Married · school-rivalry history · outside routes: Mehul 29, Rajiv 58.</span></div>
+      <div className="relationCard"><strong>Rhea Kapoor, 23 ↔ Kabir Sethi, 24</strong><span>Married · old-friend banter · outside routes: Kunal 19, Arjun 31.</span></div>
+      <div className="relationCard"><strong>Naina Mehra, 22 ↔ Dev Arora, 23</strong><span>Married · direct communication baseline · outside routes: Kunal 19, Mehul 29, Rajiv 58.</span></div>
     </div>
     <div className="marriedStrip">
       <span><b>Married:</b> Sana Qureshi ↔ Mehul Suri</span>
       <span><b>Married:</b> Neha Kapoor ↔ Arjun Rao <em>(Neha is Rhea’s elder sister)</em></span>
       <span><b>Married:</b> Tara Sethi ↔ Rohan Sethi <em>(Tara is Kabir’s bhabhi)</em></span>
     </div>
-    {!compact && <p className="contextNote">A past joke calling Mira and Aarav a “married couple” was only old-friend teasing. It is not literal canon. From here onward, relationship risk should always be readable before attraction complicates it.</p>}
+    {!compact && <p className="contextNote">V5.1 restores the three core marriages explicitly. Age-spectrum routes are all adult: Kunal is 19; Rajiv is 58. Outside attention does not equal permission, and practical accidental contact does not create later permission.</p>}
   </section>;
 }
 
@@ -347,7 +347,7 @@ function Reader(){
   },[ep,max,castMode]);
 
   const item=useMemo(()=>index?.episodes?.find(x=>x.episode===ep),[index,ep]);
-  const storyBlocks=useMemo(()=>ep===1?[]:composeStory(episode?.paragraphs||[]),[episode,ep]);
+  const storyBlocks=useMemo(()=>composeStory(episode?.paragraphs||[]),[episode]);
 
   if(!adult) return <AgeGate onEnter={()=>{sessionStorage.setItem("midnightbet-adult","yes");setAdult(true)}}/>;
 
@@ -374,7 +374,7 @@ function Reader(){
           className={"episodeBtn "+(x.episode===ep?"active":"")}
           onClick={()=>{go(x.episode);setDrawer(false)}}>
           <span className="epNum">{String(x.episode).padStart(2,"0")}</span>
-          <span className="epName">{x.title}{x.episode===1?<small className="reviewTag">V4 review</small>:x.episode===2?<small className="reviewTag">V4 reader</small>:null}</span>
+          <span className="epName">{x.title}{x.episode===1?<small className="reviewTag">V5.1 test</small>:x.episode===2?<small className="reviewTag">continuity pending</small>:null}</span>
         </button>)}
         <div className="sideTitle arcBreak">ARC II · EP13–EP24</div>
         {(index?.episodes||[]).filter(x=>x.arc===2).map(x=><button key={x.episode}
@@ -389,10 +389,10 @@ function Reader(){
         <section className="hero">
           <div className="eyebrow">ARC {item?.arc===2?"II":"I"} · Episode {String(ep).padStart(2,"0")}</div>
           <h1>{item?.title||"Loading…"}</h1>
-          <p className="sub">{ep===1?"V4 story + Grok mechanism review. Scene-by-scene decisions are interactive and saved locally in your browser.":ep===2?"V4 reader edition · source paragraph boundaries preserved · dialogue visually separated from close-third-person narration.":"Reader edition: scene prose, named dialogue and clean episode navigation."}</p>
+          <p className="sub">{ep===1?"V5.1 reader-test candidate · three married core couples · adult age-spectrum routes 19→58 · source paragraph integrity preserved.":ep===2?"Continuity warning: EP02 is still the older V4 continuity and must be repaired to match the V5.1 marriage reset.":"Reader edition: scene prose, named dialogue and clean episode navigation."}</p>
           <div className="metaRow">
             <span className="pill">24 episodes · 2 arcs</span>
-            <span className="pill">{ep===1?"V4.1 review candidate":ep===2?"V4 reader edition":"Reader edition"}</span>
+            <span className="pill">{ep===1?"V5.1 reader-test candidate":ep===2?"continuity pending":"Reader edition"}</span>
             <span className="pill">← / → keyboard navigation</span>
           </div>
         </section>
@@ -401,7 +401,8 @@ function Reader(){
           ep===1 && episode.acts
             ? <EpisodeOneReview episode={episode}/>
             : <>
-                {ep===2 && <StoryContext compact />}
+                {ep===1 ? <StoryContext /> : ep===2 ? <StoryContext compact /> : null}
+                {ep===2 && <div className="continuityWarning"><strong>Continuity pending:</strong> EP02 still belongs to the older unmarried-core V4 continuity. Read EP01 V5.1 as the current repair candidate; EP02 is not canon-safe yet.</div>}
                 <article className="reader storyReader">
                 {storyBlocks.map((b,i)=>
                   b.type==="act"

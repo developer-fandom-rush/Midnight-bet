@@ -1,0 +1,1920 @@
+{
+  "episode": 2,
+  "title": "Midnight Bet — Episode 02",
+  "episodeTitle": "After Midnight",
+  "version": "V1.3",
+  "status": "READER-TEST",
+  "sourceDocumentId": "1xp0ZaAEOvX7iW_HYoBV_8eJFDu0WrOfqK2GLJqodKt8",
+  "lineNumbering": "Stable story-block IDs. One number per source paragraph; visual wrapping does not create new line IDs.",
+  "totals": {
+    "lines": 259,
+    "dialogueBlocks": 156,
+    "narrationBlocks": 103,
+    "unknownSpeakers": 0
+  },
+  "acts": [
+    {
+      "id": "act-1",
+      "title": "ACT I — NAINA",
+      "scenes": [
+        {
+          "id": "scene-01",
+          "title": "Scene 01 — The Guess",
+          "lines": [
+            {
+              "n": 1,
+              "id": "L001",
+              "kind": "narration",
+              "speaker": null,
+              "text": "At 12:01, Sana handed every folded slip back to the spouse who was supposed to guess. Naina watched Dev turn hers over between two fingers without opening it. The paper looked harmless. That irritated her. She had spent nearly a minute deciding whether to write the sentence at all, and now it sat in his hand like a receipt."
+            },
+            {
+              "n": 2,
+              "id": "L002",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev looked at her. “One guess, right?”"
+            },
+            {
+              "n": 3,
+              "id": "L003",
+              "kind": "dialogue",
+              "speaker": "Sana",
+              "text": "Sana pointed at him from across the circle. “One. If you miss, the secret survives until tomorrow.”"
+            },
+            {
+              "n": 4,
+              "id": "L004",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir groaned. “This game was designed by a criminal.”"
+            },
+            {
+              "n": 5,
+              "id": "L005",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea smiled at him. “You are only saying that because yours is harder.”"
+            },
+            {
+              "n": 6,
+              "id": "L006",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina barely heard them. Dev was still looking at her."
+            },
+            {
+              "n": 7,
+              "id": "L007",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev did not glance toward the folded paper. “You went back to the printer because you wanted to know whether Armaan would look again,” Dev said.”"
+            },
+            {
+              "n": 8,
+              "id": "L008",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina’s fingers tightened around the edge of the cushion. Dev noticed. That was enough."
+            },
+            {
+              "n": 9,
+              "id": "L009",
+              "kind": "dialogue",
+              "speaker": "Sana",
+              "text": "Sana leaned forward. “Correct?”"
+            },
+            {
+              "n": 10,
+              "id": "L010",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina looked at Dev first, then at Sana. “Correct.”"
+            },
+            {
+              "n": 11,
+              "id": "L011",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir whistled once. Rhea elbowed him before he could add anything. Dev opened the slip. The sentence was exactly where Naina had left it. I went back because I wanted to know. He read it once, folded the paper again, and handed it to her instead of keeping it. The room moved on to the next couple, but Naina did not. Dev waited until Sana and Mehul started arguing about Kabir’s answer before he leaned closer."
+            },
+            {
+              "n": 12,
+              "id": "L012",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev spoke quietly. “Can I ask one more thing?”"
+            },
+            {
+              "n": 13,
+              "id": "L013",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina nodded."
+            },
+            {
+              "n": 14,
+              "id": "L014",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev kept his voice low. “Did you want Armaan, or did you want the answer?”"
+            },
+            {
+              "n": 15,
+              "id": "L015",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The question landed more cleanly than any joke would have."
+            },
+            {
+              "n": 16,
+              "id": "L016",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina looked down at the folded slip in her hand. “The answer.”"
+            },
+            {
+              "n": 17,
+              "id": "L017",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev watched her face for a moment. “Okay.”"
+            },
+            {
+              "n": 18,
+              "id": "L018",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina looked back at him. “That is all?”"
+            },
+            {
+              "n": 19,
+              "id": "L019",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev frowned slightly. “What were you expecting?”"
+            },
+            {
+              "n": 20,
+              "id": "L020",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina almost said judgment. She almost said jealousy. Instead she shook her head."
+            },
+            {
+              "n": 21,
+              "id": "L021",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev continued, “You told me he looked. You told me you went back. You did not tell me why. Now I know why.”"
+            },
+            {
+              "n": 22,
+              "id": "L022",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina’s shoulders eased by a fraction."
+            },
+            {
+              "n": 23,
+              "id": "L023",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev added, “If you decide the answer means something bigger, tell me when you know what it means. Do not make me guess that part.”"
+            },
+            {
+              "n": 24,
+              "id": "L024",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina let out a breath she had not noticed she was holding. “Fair.”"
+            },
+            {
+              "n": 25,
+              "id": "L025",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev smiled. “Good. Because I was very proud of my one allowed guess.”"
+            },
+            {
+              "n": 26,
+              "id": "L026",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina laughed despite herself. A few minutes later, when the circle broke apart and people began collecting bags, Dev reached for Naina’s coat. Naina took it from him, set it back on the chair, and caught his hand instead. Dev looked down at their joined fingers, then at her. Naina stepped closer on her own. She rested her forehead briefly against his shoulder. Dev did not ask what the gesture meant. He simply held her hand until she moved first."
+            }
+          ]
+        },
+        {
+          "id": "scene-02",
+          "title": "Scene 02 — The Hallway Witness",
+          "lines": [
+            {
+              "n": 27,
+              "id": "L027",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The next morning, Naina went downstairs to collect a courier. She found Prakash Menon near the lift with a newspaper tucked under one arm. He saw her at the same time and stopped."
+            },
+            {
+              "n": 28,
+              "id": "L028",
+              "kind": "dialogue",
+              "speaker": "Prakash",
+              "text": "“Good morning, Naina,” Prakash said."
+            },
+            {
+              "n": 29,
+              "id": "L029",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina returned the greeting automatically. “Morning.”"
+            },
+            {
+              "n": 30,
+              "id": "L030",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The lift indicator changed from six to five."
+            },
+            {
+              "n": 31,
+              "id": "L031",
+              "kind": "dialogue",
+              "speaker": "Prakash",
+              "text": "Prakash cleared his throat. “I should say something about yesterday.”"
+            },
+            {
+              "n": 32,
+              "id": "L032",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina looked at him properly."
+            },
+            {
+              "n": 33,
+              "id": "L033",
+              "kind": "dialogue",
+              "speaker": "Prakash",
+              "text": "Prakash kept both hands visible, one holding the newspaper and the other resting at his side. “I returned Sana’s serving bowl while the door was open. I did not want to interrupt the party.”"
+            },
+            {
+              "n": 34,
+              "id": "L034",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina’s attention sharpened."
+            },
+            {
+              "n": 35,
+              "id": "L035",
+              "kind": "dialogue",
+              "speaker": "Prakash",
+              "text": "Prakash continued, “I stepped in far enough to leave it on the console. The hallway mirror was visible from there.”"
+            },
+            {
+              "n": 36,
+              "id": "L036",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The lift passed four. Naina said nothing."
+            },
+            {
+              "n": 37,
+              "id": "L037",
+              "kind": "dialogue",
+              "speaker": "Prakash",
+              "text": "Prakash looked briefly uncomfortable. “I realized you believed you were alone. I looked away and left.”"
+            },
+            {
+              "n": 38,
+              "id": "L038",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The corridor seemed quieter than it had a second earlier. Naina remembered the mirror. She remembered loosening the shrug once to understand the accident, closing it, then opening it again because the first answer had not satisfied her. She had known Armaan might look when she returned to the printer. She had not known Prakash was standing anywhere near the apartment when she used the mirror."
+            },
+            {
+              "n": 39,
+              "id": "L039",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina asked, “How much did you see?”"
+            },
+            {
+              "n": 40,
+              "id": "L040",
+              "kind": "dialogue",
+              "speaker": "Prakash",
+              "text": "Prakash did not pretend the question was casual. “Enough to know it was private.”"
+            },
+            {
+              "n": 41,
+              "id": "L041",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina’s face warmed."
+            },
+            {
+              "n": 42,
+              "id": "L042",
+              "kind": "dialogue",
+              "speaker": "Prakash",
+              "text": "Prakash added quickly, “I am not asking you to explain it. I only did not want you to hear from someone else that I had entered.”"
+            },
+            {
+              "n": 43,
+              "id": "L043",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The lift doors opened. Neither of them moved immediately. Naina searched his expression for something she could use: amusement, curiosity, a hint that he had stayed longer than he claimed. She found embarrassment and caution. That did not make the event comfortable. It only made it harder to turn him into a villain. Naina stepped into the lift."
+            },
+            {
+              "n": 44,
+              "id": "L044",
+              "kind": "dialogue",
+              "speaker": "Prakash",
+              "text": "Prakash stayed outside. “I am sorry I walked in.”"
+            },
+            {
+              "n": 45,
+              "id": "L045",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina pressed the ground-floor button. “Thank you for telling me.”"
+            },
+            {
+              "n": 46,
+              "id": "L046",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The doors began to close."
+            },
+            {
+              "n": 47,
+              "id": "L047",
+              "kind": "dialogue",
+              "speaker": "Prakash",
+              "text": "Prakash nodded once. “Of course.”"
+            },
+            {
+              "n": 48,
+              "id": "L048",
+              "kind": "narration",
+              "speaker": null,
+              "text": "When the doors shut, Naina looked at her reflection in the mirrored wall of the lift. The image made her stomach tighten. Armaan had seen her because she had gone back knowing he might. Prakash had seen her at the exact moment she believed no one could. The difference was not small. It was the whole thing."
+            }
+          ]
+        },
+        {
+          "id": "scene-03",
+          "title": "Scene 03 — What She Does Not Tell Dev",
+          "lines": [
+            {
+              "n": 49,
+              "id": "L049",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Dev noticed the change in Naina before lunch. He was standing at the kitchen counter cutting fruit when Naina checked the apartment door lock for the second time."
+            },
+            {
+              "n": 50,
+              "id": "L050",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev put the knife down. “Something happened downstairs?”"
+            },
+            {
+              "n": 51,
+              "id": "L051",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina turned from the door. “Why?”"
+            },
+            {
+              "n": 52,
+              "id": "L052",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev pointed toward the lock. “Because you only test doors twice when your mind is somewhere else.”"
+            },
+            {
+              "n": 53,
+              "id": "L053",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina leaned against the wall. She could tell him. The thought came easily. The words did not. If she told Dev that Prakash had seen the mirror reconstruction, Dev would ask the right questions. Did he come closer? Did he say anything about her body? Did he stay? Did she want Dev to speak to him? Naina already knew some of the answers. Prakash had left. He had looked away. He had told her himself. And Naina still felt exposed. Dev waited without filling the silence."
+            },
+            {
+              "n": 54,
+              "id": "L054",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina finally said, “Do you remember the bowl Sana found on the console?”"
+            },
+            {
+              "n": 55,
+              "id": "L055",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev nodded. “Prakash uncle returned it.”"
+            },
+            {
+              "n": 56,
+              "id": "L056",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina said, “The timing bothered me.”"
+            },
+            {
+              "n": 57,
+              "id": "L057",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev studied her face. “Because?”"
+            },
+            {
+              "n": 58,
+              "id": "L058",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina folded her arms. “Because I did not know anyone had come in.”"
+            },
+            {
+              "n": 59,
+              "id": "L059",
+              "kind": "narration",
+              "speaker": null,
+              "text": "That was true."
+            },
+            {
+              "n": 60,
+              "id": "L060",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev picked the knife up again but did not resume cutting. “Do you think he saw something?”"
+            },
+            {
+              "n": 61,
+              "id": "L061",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina looked at the fruit instead of him."
+            },
+            {
+              "n": 62,
+              "id": "L062",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "“I do not know what he saw,” Naina said."
+            },
+            {
+              "n": 63,
+              "id": "L063",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The sentence was technically accurate only if she defined knowledge narrowly enough."
+            },
+            {
+              "n": 64,
+              "id": "L064",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev did not challenge it. “Then do not force yourself to invent the missing part.”"
+            },
+            {
+              "n": 65,
+              "id": "L065",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina almost laughed at the irony. The missing part was no longer missing to her. What she did not know was what to do with it. Prakash had crossed into a private sightline by accident, recognized the privacy, and withdrawn. Telling Dev might create a confrontation around an event Prakash had already tried to close respectfully. Not telling Dev meant choosing secrecy. Naina disliked both options."
+            },
+            {
+              "n": 66,
+              "id": "L066",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev resumed cutting the apple. “If you want me involved, tell me.”"
+            },
+            {
+              "n": 67,
+              "id": "L067",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina looked at him."
+            },
+            {
+              "n": 68,
+              "id": "L068",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "“I know,” Naina said."
+            },
+            {
+              "n": 69,
+              "id": "L069",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Dev slid one apple slice toward her. Naina took it. She did not tell him what Prakash had said. Not yet."
+            }
+          ]
+        },
+        {
+          "id": "scene-04",
+          "title": "Scene 04 — Legitimate Recontact",
+          "lines": [
+            {
+              "n": 70,
+              "id": "L070",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Sana’s message arrived that afternoon. Sana: I need help before Mehul turns the housewarming photos into twelve different folders called FINAL. A second message followed. Sana: Armaan has the layout files. You are the only person I trust to stop him from using six fonts."
+            },
+            {
+              "n": 71,
+              "id": "L071",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev looked up from the sofa. “Why are you smiling?” Dev asked."
+            },
+            {
+              "n": 72,
+              "id": "L072",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina handed him the phone."
+            },
+            {
+              "n": 73,
+              "id": "L073",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev read the messages and gave it back. “Six fonts is a serious emergency,” Dev said."
+            },
+            {
+              "n": 74,
+              "id": "L074",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina sat beside him. “She wants me to help with the album,” Naina said."
+            },
+            {
+              "n": 75,
+              "id": "L075",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev nodded. “Do you want to?”"
+            },
+            {
+              "n": 76,
+              "id": "L076",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "“I think so,” Naina said."
+            },
+            {
+              "n": 77,
+              "id": "L077",
+              "kind": "dialogue",
+              "speaker": "Dev",
+              "text": "Dev looked at her for a moment. “Then say yes.”"
+            },
+            {
+              "n": 78,
+              "id": "L078",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina opened the group chat. She chose the conditions herself. Naina: Public place. One hour. Bring the raw files and printer references. Armaan replied almost immediately. Armaan: Café downstairs at four? Naina typed back. Naina: Four works. At 4:03, Naina walked into the café wearing a sleeveless top under a light open overshirt. She had chosen the outfit before she knew whether Armaan would notice it. The distinction mattered to her."
+            },
+            {
+              "n": 79,
+              "id": "L079",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Sana was already at the corner table. Armaan sat opposite her with a laptop open."
+            },
+            {
+              "n": 80,
+              "id": "L080",
+              "kind": "dialogue",
+              "speaker": "Armaan",
+              "text": "Armaan stood halfway when Naina approached. “Hi,” Armaan said."
+            },
+            {
+              "n": 81,
+              "id": "L081",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina sat down. “Show me the damage,” Naina said."
+            },
+            {
+              "n": 82,
+              "id": "L082",
+              "kind": "narration",
+              "speaker": null,
+              "text": "For the first twenty minutes, the work stayed exactly what it claimed to be: cropping, alignment, captions and spacing. Then the café grew warmer. Naina slipped the overshirt from her shoulders and folded it over the back of her chair. She did not do it for Armaan. She still watched his reaction. Armaan’s eyes moved toward her once, taking in the changed sleeveless look before returning to the laptop. Naina noticed. This time she did not feel caught. She had chosen the clothes. She had chosen the place."
+            },
+            {
+              "n": 83,
+              "id": "L083",
+              "kind": "narration",
+              "speaker": null,
+              "text": "She had chosen to remove the layer."
+            },
+            {
+              "n": 84,
+              "id": "L084",
+              "kind": "dialogue",
+              "speaker": "Armaan",
+              "text": "Armaan rotated the laptop toward her. “This crop or the wider one?” Armaan asked."
+            },
+            {
+              "n": 85,
+              "id": "L085",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Naina leaned closer to compare the images. Her bare shoulder came nearer to his side of the screen than it had been a moment earlier. Armaan stopped moving the trackpad. Naina looked at him. His eyes returned to her face. Neither of them pretended the pause had not happened. Naina stayed where she was for one more beat, then pointed at the wider crop."
+            },
+            {
+              "n": 86,
+              "id": "L086",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "“The second one,” Naina said."
+            },
+            {
+              "n": 87,
+              "id": "L087",
+              "kind": "dialogue",
+              "speaker": "Armaan",
+              "text": "Armaan swallowed and moved the cursor. “Okay.”"
+            },
+            {
+              "n": 88,
+              "id": "L088",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The exchange was small. The difference from the mirror was not. Naina could feel her pulse speed up, but the feeling did not carry the same panic as learning Prakash had seen her privately. She was inside the choice this time."
+            },
+            {
+              "n": 89,
+              "id": "L089",
+              "kind": "dialogue",
+              "speaker": "Armaan",
+              "text": "When the first draft was ready, Armaan rotated the laptop toward her again. “Better?” Armaan asked."
+            },
+            {
+              "n": 90,
+              "id": "L090",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina studied the page. “Much.”"
+            },
+            {
+              "n": 91,
+              "id": "L091",
+              "kind": "dialogue",
+              "speaker": "Armaan",
+              "text": "Armaan smiled. “So I am allowed three fonts?”"
+            },
+            {
+              "n": 92,
+              "id": "L092",
+              "kind": "dialogue",
+              "speaker": "Naina",
+              "text": "Naina closed the laptop halfway. “Two.”"
+            },
+            {
+              "n": 93,
+              "id": "L093",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Sana laughed. Naina did too. The hour ended because Naina had said it would. She put the overshirt back on before standing. That final choice mattered as much as removing it had."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act-2",
+      "title": "ACT II — MIRA",
+      "scenes": [
+        {
+          "id": "scene-05",
+          "title": "Scene 05 — The Photograph",
+          "lines": [
+            {
+              "n": 94,
+              "id": "L094",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira saw Ishaan again the next afternoon when he brought the remaining printed photographs to Sana’s building. Sana had messaged that the envelope was waiting downstairs. Mira almost took a shawl before leaving her apartment. She stopped with it in her hand."
+            },
+            {
+              "n": 95,
+              "id": "L095",
+              "kind": "dialogue",
+              "speaker": "Ishaan",
+              "text": "The memory of Ishaan saying “You” instead of “the picture” returned immediately."
+            },
+            {
+              "n": 96,
+              "id": "L096",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira looked at the sleeveless top she was already wearing. Without the shawl, the neckline and line of her shoulders were more open than she normally allowed outside the apartment. Normally she would have covered that difference before going downstairs. This time she left the shawl on the chair. Ishaan was standing near the lobby table with a large photo envelope under one arm. When he saw Mira, his greeting arrived a fraction late.."
+            },
+            {
+              "n": 97,
+              "id": "L097",
+              "kind": "dialogue",
+              "speaker": "Ishaan",
+              "text": "“Hi, Mira didi,” Ishaan said."
+            },
+            {
+              "n": 98,
+              "id": "L098",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira noticed the delay. She also noticed where his eyes went before returning to her face. Not low. Not lingering. Just long enough to register that she looked different from the night before."
+            },
+            {
+              "n": 99,
+              "id": "L099",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira walked to the table. “Sana said you had the remaining prints,” Mira said."
+            },
+            {
+              "n": 100,
+              "id": "L100",
+              "kind": "dialogue",
+              "speaker": "Ishaan",
+              "text": "Ishaan handed her the envelope. “Yeah. I separated the blurry ones.”"
+            },
+            {
+              "n": 101,
+              "id": "L101",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira opened it there instead of taking it upstairs. The first few photographs were ordinary. Then she found the candid Ishaan had complimented at the party. Mira held it between them."
+            },
+            {
+              "n": 102,
+              "id": "L102",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "“This one?” Mira asked."
+            },
+            {
+              "n": 103,
+              "id": "L103",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Ishaan looked at the photograph, then at Mira."
+            },
+            {
+              "n": 104,
+              "id": "L104",
+              "kind": "dialogue",
+              "speaker": "Ishaan",
+              "text": "“This one is good,” Ishaan said."
+            },
+            {
+              "n": 105,
+              "id": "L105",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira waited. Ishaan seemed to understand that she was waiting for more."
+            },
+            {
+              "n": 106,
+              "id": "L106",
+              "kind": "dialogue",
+              "speaker": "Ishaan",
+              "text": "“You look confident in it,” Ishaan added."
+            },
+            {
+              "n": 107,
+              "id": "L107",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The word landed differently from beautiful. Mira looked down at the picture again. She had not felt confident when it was taken. She had felt aware. Now, standing in front of him without the shawl she would normally have worn, she felt something closer to what he had named. Mira set the photograph on top of the envelope. Ishaan’s eyes moved once toward her bare arms and shoulder, then back to her face. Mira caught the movement. She did not cover herself. She did not change her posture."
+            },
+            {
+              "n": 108,
+              "id": "L108",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Instead she stayed at the lobby table and continued sorting the photographs with him. The awareness lasted through several prints. Nothing accidental was keeping Mira there. Ishaan became quieter as the minutes passed, careful with his eyes in a way that made his attention more obvious rather than less. Mira finally selected three photographs."
+            },
+            {
+              "n": 109,
+              "id": "L109",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "“This one too,” Mira said, tapping the candid."
+            },
+            {
+              "n": 110,
+              "id": "L110",
+              "kind": "dialogue",
+              "speaker": "Ishaan",
+              "text": "Ishaan nodded. “Good choice.”"
+            },
+            {
+              "n": 111,
+              "id": "L111",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira looked at him. “Still the picture?”"
+            },
+            {
+              "n": 112,
+              "id": "L112",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Ishaan froze. Then he laughed, embarrassed."
+            },
+            {
+              "n": 113,
+              "id": "L113",
+              "kind": "dialogue",
+              "speaker": "Ishaan",
+              "text": "“Both,” Ishaan said."
+            },
+            {
+              "n": 114,
+              "id": "L114",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira smiled. She took the envelope and stepped away from the table. Only after she entered the lift did she realize she had never once reached for the absent shawl. Ishaan’s compliment had not merely changed which photograph she liked. It had changed what she was willing to let him see while she chose it."
+            }
+          ]
+        },
+        {
+          "id": "scene-06",
+          "title": "Scene 06 — Vikram Knew",
+          "lines": [
+            {
+              "n": 115,
+              "id": "L115",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira met Vikram Khanna near the building lobby that evening. He was standing beside the noticeboard reading a maintenance circular with the seriousness of someone reviewing a legal contract. Mira would have walked past with a greeting if Vikram had not looked up first."
+            },
+            {
+              "n": 116,
+              "id": "L116",
+              "kind": "dialogue",
+              "speaker": "Vikram",
+              "text": "“Good evening, Mira,” Vikram said."
+            },
+            {
+              "n": 117,
+              "id": "L117",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira said, “Good evening.”"
+            },
+            {
+              "n": 118,
+              "id": "L118",
+              "kind": "dialogue",
+              "speaker": "Vikram",
+              "text": "Vikram folded the circular once. “Did the photographs survive the printer?”"
+            },
+            {
+              "n": 119,
+              "id": "L119",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira stopped. The question was ordinary enough."
+            },
+            {
+              "n": 120,
+              "id": "L120",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "“Yes,” Mira said. “Mostly.”"
+            },
+            {
+              "n": 121,
+              "id": "L121",
+              "kind": "dialogue",
+              "speaker": "Vikram",
+              "text": "Vikram smiled. “Good. That young photographer looked more frightened than the machine when your shawl caught.”"
+            },
+            {
+              "n": 122,
+              "id": "L122",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira did not answer. Vikram’s smile disappeared almost immediately. The lobby noise seemed to move farther away. Mira remembered the photo table. Ishaan’s eyes. Her hand starting toward the shawl. The tray. The extra second before she corrected the fabric. She had known Ishaan was looking. She had not known anyone else was watching the sequence."
+            },
+            {
+              "n": 123,
+              "id": "L123",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira asked, “You saw that?”"
+            },
+            {
+              "n": 124,
+              "id": "L124",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Vikram understood too late that the comment had carried more information than he intended."
+            },
+            {
+              "n": 125,
+              "id": "L125",
+              "kind": "dialogue",
+              "speaker": "Vikram",
+              "text": "“I was near the dining room,” Vikram said. “I only saw the cloth catch and the boy panic.”"
+            },
+            {
+              "n": 126,
+              "id": "L126",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira looked at him."
+            },
+            {
+              "n": 127,
+              "id": "L127",
+              "kind": "dialogue",
+              "speaker": "Vikram",
+              "text": "Vikram added, “I should not have mentioned it. I am sorry.”"
+            },
+            {
+              "n": 128,
+              "id": "L128",
+              "kind": "narration",
+              "speaker": null,
+              "text": "There was no amusement in his face. That helped less than Mira expected."
+            },
+            {
+              "n": 129,
+              "id": "L129",
+              "kind": "dialogue",
+              "speaker": "Vikram",
+              "text": "Vikram changed the subject himself. “The maintenance meeting is moved to Friday. Please tell Aarav if he asks.”"
+            },
+            {
+              "n": 130,
+              "id": "L130",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira nodded. “I will.”"
+            },
+            {
+              "n": 131,
+              "id": "L131",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Vikram stepped toward the lift."
+            },
+            {
+              "n": 132,
+              "id": "L132",
+              "kind": "dialogue",
+              "speaker": "Vikram",
+              "text": "Before entering, Vikram turned back once. “I did not mean to make you uncomfortable.”"
+            },
+            {
+              "n": 133,
+              "id": "L133",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira answered honestly. “I know.”"
+            },
+            {
+              "n": 134,
+              "id": "L134",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The lift doors closed behind him. Mira remained near the noticeboard. Ishaan had looked directly at her and become embarrassed when she noticed. Vikram had seen the same moment from somewhere outside her awareness. Nothing about the physical event had changed. Her feeling about it had."
+            }
+          ]
+        },
+        {
+          "id": "scene-07",
+          "title": "Scene 07 — Same Visibility, Different Meaning",
+          "lines": [
+            {
+              "n": 135,
+              "id": "L135",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira took the stairs instead of the lift. She needed movement more than speed. By the second floor, she had stopped thinking about Vikram’s exact words and started thinking about why they bothered her. Ishaan seeing her had not frightened her. The shawl had slipped accidentally, but once Mira saw his reaction she had known what was happening. She had known where he was standing. She had known when she could end the moment. More importantly, she had chosen not to end it immediately."
+            },
+            {
+              "n": 136,
+              "id": "L136",
+              "kind": "narration",
+              "speaker": null,
+              "text": "That choice still embarrassed her. It did not feel invasive. Vikram’s observation was different. He had not done anything wrong by being in the room. He had not approached her or tried to keep the moment alive. But Mira had not known he was part of it. That changed the memory. She stopped at the landing and rested one hand on the railing. For the first time since the party, Mira understood that the attention itself was not the only thing she had reacted to. Control mattered. Knowing who was looking mattered."
+            },
+            {
+              "n": 137,
+              "id": "L137",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Being able to decide when the moment ended mattered. She thought of Mehul next. His hand had caught her forearm because she was falling. The contact had been more direct than anything with Ishaan, yet Mira had not replayed it in the same way. Mehul had released her immediately. His restraint had made the boundary clear. Mira climbed the remaining stairs more slowly. By the time she reached her floor, the three moments had separated cleanly in her mind. Ishaan had noticed, and Mira had chosen the extra second."
+            },
+            {
+              "n": 138,
+              "id": "L138",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mehul had touched, and Mehul had chosen the quick ending. Vikram had watched, and Mira had never known she was being observed. The category was not attention. The category was choice."
+            }
+          ]
+        },
+        {
+          "id": "scene-08",
+          "title": "Scene 08 — Aarav's Rule",
+          "lines": [
+            {
+              "n": 139,
+              "id": "L139",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Aarav was sitting on the sofa when Mira came inside."
+            },
+            {
+              "n": 140,
+              "id": "L140",
+              "kind": "dialogue",
+              "speaker": "Aarav",
+              "text": "Aarav looked up from his phone. “You took the stairs?”"
+            },
+            {
+              "n": 141,
+              "id": "L141",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira closed the door behind her. “Yes.”"
+            },
+            {
+              "n": 142,
+              "id": "L142",
+              "kind": "dialogue",
+              "speaker": "Aarav",
+              "text": "Aarav studied her face. “That sounds like a story.”"
+            },
+            {
+              "n": 143,
+              "id": "L143",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira took off her shoes and sat at the other end of the sofa."
+            },
+            {
+              "n": 144,
+              "id": "L144",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "“Vikram saw the shawl slip yesterday,” Mira said."
+            },
+            {
+              "n": 145,
+              "id": "L145",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Aarav put his phone down."
+            },
+            {
+              "n": 146,
+              "id": "L146",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira continued before he could respond. “Not just the shawl on the floor later. The photo-table moment. He saw Ishaan notice.”"
+            },
+            {
+              "n": 147,
+              "id": "L147",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Aarav’s expression changed, but not in the direction Mira had expected."
+            },
+            {
+              "n": 148,
+              "id": "L148",
+              "kind": "dialogue",
+              "speaker": "Aarav",
+              "text": "Aarav asked, “Did Vikram say something inappropriate?”"
+            },
+            {
+              "n": 149,
+              "id": "L149",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira said, “No.”"
+            },
+            {
+              "n": 150,
+              "id": "L150",
+              "kind": "dialogue",
+              "speaker": "Aarav",
+              "text": "Aarav asked, “Did he make you uncomfortable on purpose?”"
+            },
+            {
+              "n": 151,
+              "id": "L151",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira said, “No.”"
+            },
+            {
+              "n": 152,
+              "id": "L152",
+              "kind": "dialogue",
+              "speaker": "Aarav",
+              "text": "Aarav nodded slowly. “Do you want me to speak to him?”"
+            },
+            {
+              "n": 153,
+              "id": "L153",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira looked at him. The question was almost identical to the one Dev had asked Naina the previous night, though Mira did not know that."
+            },
+            {
+              "n": 154,
+              "id": "L154",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "“No,” Mira said. “He apologized.”"
+            },
+            {
+              "n": 155,
+              "id": "L155",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Aarav waited."
+            },
+            {
+              "n": 156,
+              "id": "L156",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira rubbed one thumb over the other. “Would it bother you if someone noticed me?”"
+            },
+            {
+              "n": 157,
+              "id": "L157",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Aarav leaned back against the sofa."
+            },
+            {
+              "n": 158,
+              "id": "L158",
+              "kind": "dialogue",
+              "speaker": "Aarav",
+              "text": "“Someone noticing you is about them,” Aarav said. “You being uncomfortable is about you. The second part matters to me.”"
+            },
+            {
+              "n": 159,
+              "id": "L159",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira watched him."
+            },
+            {
+              "n": 160,
+              "id": "L160",
+              "kind": "dialogue",
+              "speaker": "Aarav",
+              "text": "Aarav continued, “I do not need you to be invisible to prove we are married.”"
+            },
+            {
+              "n": 161,
+              "id": "L161",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira smiled despite herself. “That sounded suspiciously sensible.”"
+            },
+            {
+              "n": 162,
+              "id": "L162",
+              "kind": "dialogue",
+              "speaker": "Aarav",
+              "text": "Aarav pointed at her. “Please document this moment.”"
+            },
+            {
+              "n": 163,
+              "id": "L163",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira laughed."
+            },
+            {
+              "n": 164,
+              "id": "L164",
+              "kind": "dialogue",
+              "speaker": "Aarav",
+              "text": "Aarav reached his hand toward hers and stopped just short. “Can I ask what part bothered you?”"
+            },
+            {
+              "n": 165,
+              "id": "L165",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Mira looked down at the small gap between their hands. She still did not want to tell him about the extra second with Ishaan. Not because she thought he would punish her. Because she had only just understood it herself. Mira turned her hand palm-up. Aarav placed his hand over it."
+            },
+            {
+              "n": 166,
+              "id": "L166",
+              "kind": "dialogue",
+              "speaker": "Mira",
+              "text": "Mira answered, “I knew Ishaan was looking. I did not know Vikram was.”"
+            },
+            {
+              "n": 167,
+              "id": "L167",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Aarav nodded. He did not ask for more. Mira squeezed his fingers once. The rest could wait until she understood what she wanted to say."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act-3",
+      "title": "ACT III — RHEA",
+      "scenes": [
+        {
+          "id": "scene-09",
+          "title": "Scene 09 — Yash Without Kabir",
+          "lines": [
+            {
+              "n": 168,
+              "id": "L168",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea went back to Sana’s apartment the next afternoon because Kabir had left his charger there. Sana was in the kitchen labeling leftover containers when the doorbell rang."
+            },
+            {
+              "n": 169,
+              "id": "L169",
+              "kind": "dialogue",
+              "speaker": "Sana",
+              "text": "“I am not opening it,” Sana called. “My hands are covered in tape.”"
+            },
+            {
+              "n": 170,
+              "id": "L170",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea walked to the door. Yash stood outside holding a coiled extension lead and one of the clear lighting clips from the staircase."
+            },
+            {
+              "n": 171,
+              "id": "L171",
+              "kind": "dialogue",
+              "speaker": "Yash",
+              "text": "“Hi,” Yash said."
+            },
+            {
+              "n": 172,
+              "id": "L172",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea looked at the cable. “You are returning stolen property?”"
+            },
+            {
+              "n": 173,
+              "id": "L173",
+              "kind": "dialogue",
+              "speaker": "Yash",
+              "text": "Yash smiled nervously. “Sana aunty said this was hers.”"
+            },
+            {
+              "n": 174,
+              "id": "L174",
+              "kind": "dialogue",
+              "speaker": "Sana",
+              "text": "From the kitchen, Sana shouted, “I heard the aunty.”"
+            },
+            {
+              "n": 175,
+              "id": "L175",
+              "kind": "dialogue",
+              "speaker": "Yash",
+              "text": "Yash’s face changed. “Sorry, Sana.”"
+            },
+            {
+              "n": 176,
+              "id": "L176",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea laughed and reached for the extension lead. The cable snagged briefly against the loose end of her saree drape as she pulled it inside. The pallu slid from her shoulder and pulled the side drape out of place with it, leaving the blouse line and a wider strip of her waist exposed before the fabric settled. Rhea felt the change immediately. So did Yash. His eyes dropped before he could stop them. The reaction was almost identical to the one on the staircase. The difference was that Kabir was not there. Rhea’s hand went to the saree at once. She restored the pallu and side drape immediately. No extra beat. No eye contact held for someone else.."
+            },
+            {
+              "n": 177,
+              "id": "L177",
+              "kind": "narration",
+              "speaker": null,
+              "text": "No curiosity about how long she could leave it. Yash looked away toward the corridor."
+            },
+            {
+              "n": 178,
+              "id": "L178",
+              "kind": "dialogue",
+              "speaker": "Yash",
+              "text": "“Sorry,” Yash said."
+            },
+            {
+              "n": 179,
+              "id": "L179",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea looked at him. The previous night, his awkwardness had carried a charge because Kabir had been watching it happen. Now the same reaction made Rhea feel exposed rather than playful."
+            },
+            {
+              "n": 180,
+              "id": "L180",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "“You did not do anything,” Rhea said."
+            },
+            {
+              "n": 181,
+              "id": "L181",
+              "kind": "dialogue",
+              "speaker": "Yash",
+              "text": "Yash held the cable out more carefully. “Still.”"
+            },
+            {
+              "n": 182,
+              "id": "L182",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea took it. Their hands did not touch. For a second both of them were overly careful about the gap."
+            },
+            {
+              "n": 183,
+              "id": "L183",
+              "kind": "dialogue",
+              "speaker": "Yash",
+              "text": "Yash asked, “The lights stayed up?”"
+            },
+            {
+              "n": 184,
+              "id": "L184",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "“Miraculously,” Rhea said."
+            },
+            {
+              "n": 185,
+              "id": "L185",
+              "kind": "dialogue",
+              "speaker": "Sana",
+              "text": "Sana appeared behind Rhea carrying a marker pen. “Leave the clip too.”"
+            },
+            {
+              "n": 186,
+              "id": "L186",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Yash handed it over."
+            },
+            {
+              "n": 187,
+              "id": "L187",
+              "kind": "dialogue",
+              "speaker": "Sana",
+              "text": "Sana pointed the marker at him. “And next time, call me Sana. I am twenty-seven, not your school principal.”"
+            },
+            {
+              "n": 188,
+              "id": "L188",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Yash looked helplessly at Rhea."
+            },
+            {
+              "n": 189,
+              "id": "L189",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea said, “You are on your own.”"
+            },
+            {
+              "n": 190,
+              "id": "L190",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Yash laughed and left. Rhea closed the door. The interaction had been physically more revealing than the cable return needed to be. Yet it had produced less excitement than the narrower, contact-free staircase moment. Rhea understood why before she even picked up Kabir’s charger. Yash had been present both times. Kabir had not. That was the variable."
+            }
+          ]
+        },
+        {
+          "id": "scene-10",
+          "title": "Scene 10 — The Narrow Turn",
+          "lines": [
+            {
+              "n": 191,
+              "id": "L191",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Neha called Rhea that evening with a practical problem. A folding console table had been delivered to the wrong side of the apartment, and Arjun was trying to move it through a narrow turn near the study."
+            },
+            {
+              "n": 192,
+              "id": "L192",
+              "kind": "dialogue",
+              "speaker": "Neha",
+              "text": "“Come upstairs for five minutes,” Neha said. “You are smaller than both of us and therefore temporarily useful.”"
+            },
+            {
+              "n": 193,
+              "id": "L193",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea arrived to find Arjun holding one end of the folded table while Neha stood beside the doorway measuring the gap with her eyes."
+            },
+            {
+              "n": 194,
+              "id": "L194",
+              "kind": "dialogue",
+              "speaker": "Arjun",
+              "text": "Arjun looked at Rhea. “Your sister has promoted you to logistics.”"
+            },
+            {
+              "n": 195,
+              "id": "L195",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea looked at the table. “I have been given worse jobs.”"
+            },
+            {
+              "n": 196,
+              "id": "L196",
+              "kind": "dialogue",
+              "speaker": "Neha",
+              "text": "Neha pointed at the far edge. “Take that side. We turn it diagonally.”"
+            },
+            {
+              "n": 197,
+              "id": "L197",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea placed both hands on the frame. The first movement was easy. The second brought them toward the narrow corner where Arjun would have needed to step behind Rhea to keep the table level. Rhea saw the geometry before it happened. She remembered the stool. Her hand on Arjun’s shoulder. His hand beginning one movement, then choosing another. Neha’s voice afterward. Obviously. Rhea stopped."
+            },
+            {
+              "n": 198,
+              "id": "L198",
+              "kind": "dialogue",
+              "speaker": "Arjun",
+              "text": "Arjun looked at her. “What?”"
+            },
+            {
+              "n": 199,
+              "id": "L199",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea shifted her grip. “Neha, take my side for the turn.”"
+            },
+            {
+              "n": 200,
+              "id": "L200",
+              "kind": "dialogue",
+              "speaker": "Neha",
+              "text": "Neha blinked. “Why?”"
+            },
+            {
+              "n": 201,
+              "id": "L201",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea pointed at the wall. “Because if Arjun comes around behind me, the leg catches the corner.”"
+            },
+            {
+              "n": 202,
+              "id": "L202",
+              "kind": "dialogue",
+              "speaker": "Arjun",
+              "text": "Arjun looked at the corner, then nodded. “She is right.”"
+            },
+            {
+              "n": 203,
+              "id": "L203",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Neha switched places without another question. The three of them moved the table through the doorway cleanly. No one touched anyone. No one almost did. When the table was against the study wall, Neha stepped back and smiled."
+            },
+            {
+              "n": 204,
+              "id": "L204",
+              "kind": "dialogue",
+              "speaker": "Neha",
+              "text": "“See?” Neha said. “Competence.”"
+            },
+            {
+              "n": 205,
+              "id": "L205",
+              "kind": "dialogue",
+              "speaker": "Arjun",
+              "text": "Arjun folded his arms. “I did most of the lifting.”"
+            },
+            {
+              "n": 206,
+              "id": "L206",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Neha ignored him. Rhea smiled, but the relief she felt had nothing to do with the furniture. She had seen the possible awkwardness before it arrived and changed the movement herself. Arjun had accepted the adjustment without making it visible. That mattered."
+            },
+            {
+              "n": 207,
+              "id": "L207",
+              "kind": "dialogue",
+              "speaker": "Neha",
+              "text": "Neha handed Rhea a bottle of water. “Thank you.”"
+            },
+            {
+              "n": 208,
+              "id": "L208",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea took it. “You owe me dessert.”"
+            },
+            {
+              "n": 209,
+              "id": "L209",
+              "kind": "dialogue",
+              "speaker": "Neha",
+              "text": "Neha nodded. “Reasonable.”"
+            },
+            {
+              "n": 210,
+              "id": "L210",
+              "kind": "narration",
+              "speaker": null,
+              "text": "On the way home, Rhea realized the event had progressed without any physical contact at all. The new part was that she had chosen the boundary before anyone else had to."
+            }
+          ]
+        },
+        {
+          "id": "scene-11",
+          "title": "Scene 11 — Rhea Names the Real Variable",
+          "lines": [
+            {
+              "n": 211,
+              "id": "L211",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir was on the balcony when Rhea got home. He looked up from his phone as she stepped outside."
+            },
+            {
+              "n": 212,
+              "id": "L212",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "“Yash returned the extension cable,” Kabir said."
+            },
+            {
+              "n": 213,
+              "id": "L213",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea stopped. “How do you know that?”"
+            },
+            {
+              "n": 214,
+              "id": "L214",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir lifted his phone. “Sana complained in the group that he called her aunty.”"
+            },
+            {
+              "n": 215,
+              "id": "L215",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea laughed. “He nearly died.”"
+            },
+            {
+              "n": 216,
+              "id": "L216",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir watched her. “And?”"
+            },
+            {
+              "n": 217,
+              "id": "L217",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea leaned against the railing. “And what?”"
+            },
+            {
+              "n": 218,
+              "id": "L218",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir smiled. “You are telling me a story with the interesting part removed.”"
+            },
+            {
+              "n": 219,
+              "id": "L219",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea looked at him. Yesterday, that sentence might have made her defensive. Today she had an answer."
+            },
+            {
+              "n": 220,
+              "id": "L220",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "“There was no interesting part,” Rhea said."
+            },
+            {
+              "n": 221,
+              "id": "L221",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir’s eyebrows rose."
+            },
+            {
+              "n": 222,
+              "id": "L222",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea continued, “He came to the door. He gave me the cable. He was awkward. Then he left.”"
+            },
+            {
+              "n": 223,
+              "id": "L223",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir waited. Rhea looked toward the courtyard below."
+            },
+            {
+              "n": 224,
+              "id": "L224",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "“The staircase was different,” Rhea said."
+            },
+            {
+              "n": 225,
+              "id": "L225",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir put his phone down."
+            },
+            {
+              "n": 226,
+              "id": "L226",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea turned back to him. “I thought it was because Yash was standing too close.”"
+            },
+            {
+              "n": 227,
+              "id": "L227",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir asked, “It was not?”"
+            },
+            {
+              "n": 228,
+              "id": "L228",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea shook her head. “Not exactly.”"
+            },
+            {
+              "n": 229,
+              "id": "L229",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir’s expression became more curious."
+            },
+            {
+              "n": 230,
+              "id": "L230",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea said, “It was because you were watching him.”"
+            },
+            {
+              "n": 231,
+              "id": "L231",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir went very still for half a second. Then he smiled."
+            },
+            {
+              "n": 232,
+              "id": "L232",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea pointed at him immediately. “Do not become unbearable.”"
+            },
+            {
+              "n": 233,
+              "id": "L233",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir placed one hand over his chest. “I have learned something beautiful about myself.”"
+            },
+            {
+              "n": 234,
+              "id": "L234",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea rolled her eyes. “That is exactly what I meant.”"
+            },
+            {
+              "n": 235,
+              "id": "L235",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir laughed. Rhea stepped closer and caught the front of his shirt between two fingers. Kabir looked down at her hand."
+            },
+            {
+              "n": 236,
+              "id": "L236",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea said, “I saw you see him hesitate. I stayed there because I wanted to know what you would do with it.”"
+            },
+            {
+              "n": 237,
+              "id": "L237",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir’s smile softened."
+            },
+            {
+              "n": 238,
+              "id": "L238",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "“And what did I do?” Kabir asked."
+            },
+            {
+              "n": 239,
+              "id": "L239",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea answered, “You noticed.”"
+            },
+            {
+              "n": 240,
+              "id": "L240",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir nodded. “I usually do.”"
+            },
+            {
+              "n": 241,
+              "id": "L241",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea thought of Arjun. Kabir had not noticed that. She did not tell him. The secret no longer felt exciting. It felt attached to Neha’s trust, which made it heavier and less interesting at the same time."
+            },
+            {
+              "n": 242,
+              "id": "L242",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir touched Rhea’s wrist lightly. “Anything else from yesterday?”"
+            },
+            {
+              "n": 243,
+              "id": "L243",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea met his eyes."
+            },
+            {
+              "n": 244,
+              "id": "L244",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "“No,” Rhea said."
+            },
+            {
+              "n": 245,
+              "id": "L245",
+              "kind": "narration",
+              "speaker": null,
+              "text": "The answer was incomplete. It was also deliberate."
+            }
+          ]
+        },
+        {
+          "id": "scene-12",
+          "title": "Scene 12 — After Midnight Hook",
+          "lines": [
+            {
+              "n": 246,
+              "id": "L246",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Sana created another group chat before dinner. Sana: HOUSEWARMING DAMAGE CONTROL Kabir looked at the name and laughed. Rhea sat beside him on the sofa while messages arrived. Sana: Naina + Armaan — album draft Saturday. Sana: Mira + Ishaan — please collect the remaining prints. Sana: Yash — I still have two lighting clips that make no sense. Sana: Everyone else — stop volunteering me for things. Rhea read Yash’s name. Nothing. No quick pulse. No sudden replay of the stair landing. Just a name in a message."
+            },
+            {
+              "n": 247,
+              "id": "L247",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir shifted closer to read over her shoulder. His arm touched the back of the sofa behind her."
+            },
+            {
+              "n": 248,
+              "id": "L248",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir said, “Your lighting consultant returns.”"
+            },
+            {
+              "n": 249,
+              "id": "L249",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea felt the reaction then. Small. Immediate. Annoyingly familiar. She turned her head toward him. Kabir saw the change in her face and smiled. Rhea stared at him."
+            },
+            {
+              "n": 250,
+              "id": "L250",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir asked, “What?”"
+            },
+            {
+              "n": 251,
+              "id": "L251",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea locked her phone and placed it face-down on her lap."
+            },
+            {
+              "n": 252,
+              "id": "L252",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "“There,” Rhea said."
+            },
+            {
+              "n": 253,
+              "id": "L253",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir frowned. “There what?”"
+            },
+            {
+              "n": 254,
+              "id": "L254",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea leaned back against the sofa. She finally understood the pattern well enough to trust it. Yash was not the interesting part. The interesting part was what happened inside her marriage when Kabir noticed Yash. Rhea smiled."
+            },
+            {
+              "n": 255,
+              "id": "L255",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "“You,” Rhea said."
+            },
+            {
+              "n": 256,
+              "id": "L256",
+              "kind": "dialogue",
+              "speaker": "Kabir",
+              "text": "Kabir blinked. “Me?”"
+            },
+            {
+              "n": 257,
+              "id": "L257",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Rhea nodded once. Kabir looked pleased with himself."
+            },
+            {
+              "n": 258,
+              "id": "L258",
+              "kind": "dialogue",
+              "speaker": "Rhea",
+              "text": "Rhea pointed at him. “Do not make me regret explaining it.”"
+            },
+            {
+              "n": 259,
+              "id": "L259",
+              "kind": "narration",
+              "speaker": null,
+              "text": "Kabir laughed. The phone vibrated again on Rhea’s lap. She did not check the message immediately. For the first time since the stairwell, she did not need another person’s attention to explain the feeling. She already knew where it was coming from. It had started outside the marriage. It had ended inside it."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

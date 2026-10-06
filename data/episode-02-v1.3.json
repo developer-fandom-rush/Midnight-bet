@@ -3,7 +3,7 @@
   "title": "Midnight Bet — Episode 02",
   "episodeTitle": "After Midnight",
   "version": "V1.3",
-  "status": "READER-TEST",
+  "status": "GROK-VALIDATED",
   "sourceDocumentId": "1xp0ZaAEOvX7iW_HYoBV_8eJFDu0WrOfqK2GLJqodKt8",
   "lineNumbering": "Stable story-block IDs. One number per source paragraph; visual wrapping does not create new line IDs.",
   "totals": {
@@ -1916,5 +1916,9 @@
         }
       ]
     }
-  ]
+  ],
+  "validation": {
+    "grokReviewed": true,
+    "note": "Substantive V1.3 prose validated against GROK-clean copy; UI intentionally serves clean source formatting with native line/speaker metadata."
+  }
 }

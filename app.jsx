@@ -41,49 +41,39 @@ function isSceneTurn(text){
   return /^(At \d|By \d|Later\b|Across town\b|Meanwhile\b|That night\b|The next\b|After dinner\b|After the\b|Saturday\b|Sunday\b|The session\b|The reunion\b|Dinner\b)/i.test(text);
 }
 
-function composeStory(paragraphs){
-  const lines=(paragraphs||[]).map(cleanLine).filter(Boolean);
-  const blocks=[];
-  let prose=[];
-
-  const flush=()=>{
-    if(!prose.length) return;
-    blocks.push({type:"prose",text:prose.join(" ")});
-    prose=[];
-  };
-
-  for(let i=0;i<lines.length;i++){
-    const line=lines[i];
-    const next=lines[i+1];
-
-    if(isActHeading(line)){
-      flush();
-      blocks.push({type:"act",text:line});
-      continue;
-    }
-
-    if(isCue(line) && next && isDialogue(next)){
-      flush();
-      blocks.push({type:"dialogue",text:line+" "+next});
-      i++;
-      continue;
-    }
-
-    if(isDialogue(line)){
-      flush();
-      blocks.push({type:"dialogue",text:line});
-      continue;
-    }
-
-    if(isSceneTurn(line) && prose.length) flush();
-    prose.push(line);
-
-    const chars=prose.reduce((n,x)=>n+x.length,0);
-    if(prose.length>=4 || chars>=480) flush();
+function splitStoryText(text){
+  const source=String(text||"").trim();
+  if(!source) return [];
+  const parts=[];
+  const re=/(“[^”]+”|"[^"]+")/g;
+  let last=0,match;
+  while((match=re.exec(source))){
+    const before=source.slice(last,match.index).trim();
+    if(before) parts.push({type:"narration",text:before});
+    parts.push({type:"dialogue",text:match[0]});
+    last=re.lastIndex;
   }
+  const tail=source.slice(last).trim();
+  if(tail) parts.push({type:"narration",text:tail});
+  return parts.length?parts:[{type:"narration",text:source}];
+}
 
-  flush();
-  return blocks;
+function StoryParagraph({text}){
+  const parts=splitStoryText(text);
+  return <div className="storyUnit">
+    {parts.map((part,i)=>
+      part.type==="dialogue"
+        ? <div className="dialogueBeat" key={i}>{part.text}</div>
+        : <div className="narrativeBeat" key={i}>{part.text}</div>
+    )}
+  </div>;
+}
+
+function composeStory(paragraphs){
+  return (paragraphs||[])
+    .map(cleanLine)
+    .filter(Boolean)
+    .map(line=>isActHeading(line)?{type:"act",text:line}:{type:"paragraph",text:line});
 }
 
 function AgeGate({onEnter}){
@@ -95,6 +85,25 @@ function AgeGate({onEnter}){
       <button className="enterBtn" onClick={onEnter}>I’m 18+ — Enter Reader</button>
     </div>
   </div>
+}
+
+function StoryContext({compact=false}){
+  return <section className={"storyContext "+(compact?"compact":"")}>
+    <div className="eyebrow">{compact?"Who’s who · continuity":"Prologue · who’s who"}</div>
+    <h2>{compact?"Relationship map":"Before Reunion Night"}</h2>
+    <p className="contextLead">The core six are adult old friends. The three pairings below are attraction/history routes, <strong>not marriages</strong>.</p>
+    <div className="coreSixGrid">
+      <div className="relationCard"><strong>Mira Sharma, 22 ↔ Aarav Malhotra, 23</strong><span>School rivalry, old history, mutual attraction. Not married.</span></div>
+      <div className="relationCard"><strong>Rhea Kapoor, 23 ↔ Kabir Sethi, 24</strong><span>Old-friend banter, jealousy and familiar chemistry. Not married.</span></div>
+      <div className="relationCard"><strong>Naina Mehra, 22 ↔ Dev Arora, 23</strong><span>Quiet comfort, direct communication and consent-first chemistry. Not married.</span></div>
+    </div>
+    <div className="marriedStrip">
+      <span><b>Married:</b> Sana Qureshi ↔ Mehul Suri</span>
+      <span><b>Married:</b> Neha Kapoor ↔ Arjun Rao <em>(Neha is Rhea’s elder sister)</em></span>
+      <span><b>Married:</b> Tara Sethi ↔ Rohan Sethi <em>(Tara is Kabir’s bhabhi)</em></span>
+    </div>
+    {!compact && <p className="contextNote">A past joke calling Mira and Aarav a “married couple” was only old-friend teasing. It is not literal canon. From here onward, relationship risk should always be readable before attraction complicates it.</p>}
+  </section>;
 }
 
 function Cast({cast,onBack}){
@@ -234,6 +243,7 @@ function EpisodeOneReview({episode}){
   },[episode]);
 
   return <>
+    <StoryContext />
     <section className="reviewDashboard">
       <div className="reviewIntro">
         <div className="eyebrow">ARC I · EP01 · V4.1 REVIEW MODE</div>
@@ -280,7 +290,7 @@ function EpisodeOneReview({episode}){
             return <React.Fragment key={p.id}>
               <div className={"numberedPara "+(review?"reviewTarget "+decision:"")}>
                 <span className="lineNo" aria-label={"Line "+lineNo.slice(1)}>{lineNo}</span>
-                <p className="storyPara">{text}</p>
+                <StoryParagraph text={text}/>
               </div>
               {review && <ReviewPanel paragraphId={p.id} review={review} decisions={decisions} setDecision={setDecision}/>}
             </React.Fragment>
@@ -379,7 +389,7 @@ function Reader(){
         <section className="hero">
           <div className="eyebrow">ARC {item?.arc===2?"II":"I"} · Episode {String(ep).padStart(2,"0")}</div>
           <h1>{item?.title||"Loading…"}</h1>
-          <p className="sub">{ep===1?"V4 story + Grok mechanism review. Scene-by-scene decisions are interactive and saved locally in your browser.":ep===2?"V4 reader edition with approved mechanism deepening, full three-act prose and locked continuity.":"Reader edition: scene prose, named dialogue and clean episode navigation."}</p>
+          <p className="sub">{ep===1?"V4 story + Grok mechanism review. Scene-by-scene decisions are interactive and saved locally in your browser.":ep===2?"V4 reader edition · source paragraph boundaries preserved · dialogue visually separated from close-third-person narration.":"Reader edition: scene prose, named dialogue and clean episode navigation."}</p>
           <div className="metaRow">
             <span className="pill">24 episodes · 2 arcs</span>
             <span className="pill">{ep===1?"V4.1 review candidate":ep===2?"V4 reader edition":"Reader edition"}</span>
@@ -390,15 +400,16 @@ function Reader(){
         {!episode ? <div className="loading">Loading episode…</div> :
           ep===1 && episode.acts
             ? <EpisodeOneReview episode={episode}/>
-            : <article className="reader storyReader">
+            : <>
+                {ep===2 && <StoryContext compact />}
+                <article className="reader storyReader">
                 {storyBlocks.map((b,i)=>
                   b.type==="act"
                     ? <div key={i} className="actHeading"><div className="eyebrow">Episode {String(ep).padStart(2,"0")}</div><h2>{b.text}</h2></div>
-                    : b.type==="dialogue"
-                      ? <p key={i} className="dialogueLine">{b.text}</p>
-                      : <p key={i} className="storyPara">{b.text}</p>
+                    : <StoryParagraph key={i} text={b.text}/>
                 )}
               </article>
+              </>
         }
 
         <nav className="bottomNav" aria-label="Episode navigation">

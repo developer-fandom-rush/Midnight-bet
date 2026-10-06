@@ -64,7 +64,7 @@ main{width:min(1460px,96vw);margin:auto;padding:34px 0 70px}.view{display:none}.
 .relationship-card h3 span{color:var(--accent)}
 .relationship-card p{margin:0;color:var(--muted);line-height:1.58;font-size:.9rem}
 .relationship-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
-.prologue-groups{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.prologue-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
 .prologue-group{padding:24px 30px}
 .prologue-group+ .prologue-group{border-left:1px solid var(--line)}
 .prologue-group h3{font:500 1.25rem Georgia,serif;margin:0 0 14px}
@@ -82,4 +82,10 @@ main{width:min(1460px,96vw);margin:auto;padding:34px 0 70px}.view{display:none}.
   .prologue-head{padding:24px 20px 18px}
   .relationship-card,.prologue-group{padding:19px 20px}
   .prologue-note{padding:14px 20px}
+}
+
+.teacher-group{background:rgba(214,169,201,.028)}
+@media(max-width:1100px) and (min-width:901px){
+  .prologue-groups{grid-template-columns:1fr 1fr}
+  .teacher-group{grid-column:1/-1;border-top:1px solid var(--line)}
 }

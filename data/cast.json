@@ -1,11 +1,11 @@
 {
-  "note": "Cast cards now use the real source-reference photos with portrait cropping in the UI. Matching cropped reference files are saved in Drive. No new images were generated.",
+  "note": "V5.1 relationship registry. Core six are three married couples; outside adult routes are age- and relationship-differentiated. Visual references unchanged.",
   "women": [
     {
       "name": "Mira Sharma",
       "age": 22,
-      "role": "Core six",
-      "connection": "Primary heat: Aarav · Cross-wires: Kabir, Dev",
+      "role": "Core six · married",
+      "connection": "Married to Aarav Malhotra (23) · Outside routes: Mehul Suri (29), Rajiv Khanna (58)",
       "faceStatus": "Reference linked",
       "initials": "MS",
       "filename": "MIRA_BASELINE_MASTER.png",
@@ -26,8 +26,8 @@
     {
       "name": "Rhea Kapoor",
       "age": 23,
-      "role": "Core six",
-      "connection": "Primary heat: Kabir · Cross-wires: Aarav, Dev · Neha’s younger sister",
+      "role": "Core six · married",
+      "connection": "Married to Kabir Sethi (24) · Outside routes: Kunal Arora (19), Arjun Rao (31) · Neha’s younger sister",
       "faceStatus": "Reference linked",
       "initials": "RK",
       "visualReference": "Shruti Haasan",
@@ -48,8 +48,8 @@
     {
       "name": "Naina Mehra",
       "age": 22,
-      "role": "Core six",
-      "connection": "Primary heat: Dev · Cross-wires: Aarav, Kabir",
+      "role": "Core six · married",
+      "connection": "Married to Dev Arora (23) · Outside routes: Kunal Arora (19), Mehul Suri (29), Rajiv Khanna (58)",
       "faceStatus": "Reference linked",
       "initials": "NM",
       "visualReference": "Kareena Kapoor",

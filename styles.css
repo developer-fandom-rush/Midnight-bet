@@ -48,3 +48,33 @@ button{font:inherit}.progress{position:fixed;z-index:1000;top:0;left:0;height:3p
   .numberedPara{grid-template-columns:46px minmax(0,1fr);gap:9px}
   .lineNo{top:76px;font-size:9px;padding:5px 4px}
 }
+
+
+/* DHIKA reader-clarity lock: preserve source paragraphs; separate dialogue from narrator. */
+.storyUnit{max-width:72ch;margin:0 0 22px}
+.narrativeBeat{font:400 17px/1.86 "Libre Baskerville",serif;color:#f4eaf1;margin:0 0 10px}
+.narrativeBeat:last-child{margin-bottom:0}
+.dialogueBeat{font:600 16px/1.7 "DM Sans",sans-serif;color:#fff;margin:9px 0 11px 18px;padding:9px 13px;border-left:2px solid rgba(242,154,181,.62);background:rgba(242,154,181,.045);border-radius:0 10px 10px 0;max-width:64ch}
+.numberedPara .storyUnit{margin:0}
+.numberedPara .narrativeBeat:last-child,.numberedPara .dialogueBeat:last-child{margin-bottom:0}
+
+.storyContext{max-width:920px;margin:8px auto 28px;padding:24px 34px}
+.storyContext>h2{font:700 30px/1.2 "Libre Baskerville",serif;margin:8px 0 10px}
+.contextLead{color:#eadde6;line-height:1.7;max-width:760px}
+.coreSixGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0 12px}
+.relationCard{background:#171319;border:1px solid var(--line);border-radius:16px;padding:15px;display:flex;flex-direction:column;gap:6px}
+.relationCard strong{font-size:13px;line-height:1.4;color:#fff}
+.relationCard span{font-size:12px;line-height:1.55;color:var(--muted)}
+.marriedStrip{display:grid;gap:7px;padding:14px 16px;background:#1c161e;border:1px solid var(--line);border-radius:14px;color:#e8dbe4;font-size:12px;line-height:1.55}
+.marriedStrip em{color:var(--muted);font-style:normal}
+.contextNote{margin:14px 0 0;color:var(--muted);font-size:12px;line-height:1.65}
+.storyContext.compact{padding-top:4px;margin-bottom:6px}
+.storyContext.compact>h2{font-size:24px}
+.storyContext.compact .coreSixGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+@media(max-width:820px){
+  .narrativeBeat{font-size:16px;line-height:1.82}
+  .dialogueBeat{font-size:15px;margin-left:10px}
+  .storyContext{padding:14px 22px 20px}
+  .coreSixGrid,.storyContext.compact .coreSixGrid{grid-template-columns:1fr}
+}

@@ -3,27 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Midnight Bet — Cast</title>
+<meta name="theme-color" content="#0d0b10">
+<title>Midnight Bet — Episode 01 Reader</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main>
-<header>
-<div class="kicker">MIDNIGHT BET</div>
-<h1>Character Cast</h1>
-<p>Clean-slate cast gallery. Story episodes are not published yet.</p>
-</header>
-<section class="grid">
-<article class="card"><img src="assets/characters/MIRA.jpg" alt="Mira"><div class="name">Mira</div></article>
-<article class="card"><img src="assets/characters/RHEA.jpg" alt="Rhea"><div class="name">Rhea</div></article>
-<article class="card"><img src="assets/characters/NAINA.jpg" alt="Naina"><div class="name">Naina</div></article>
-<article class="card"><img src="assets/characters/ANANYA.jpg" alt="Ananya"><div class="name">Ananya</div></article>
-<article class="card"><img src="assets/characters/SHALINI.jpg" alt="Shalini"><div class="name">Shalini</div></article>
-<article class="card"><img src="assets/characters/TARA.jpg" alt="Tara"><div class="name">Tara</div></article>
-<article class="card"><img src="assets/characters/NEHA.jpg" alt="Neha"><div class="name">Neha</div></article>
-<article class="card"><img src="assets/characters/SANA.jpg" alt="Sana"><div class="name">Sana</div></article>
-<article class="card"><img src="assets/characters/MEERA_KHANA.png" alt="Meera Khana"><div class="name">Meera Khana</div></article>
-</section>
-</main>
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="kicker">MIDNIGHT BET</div>
+      <div class="brand-title">Reader</div>
+    </div>
+    <nav class="topnav" aria-label="Primary navigation">
+      <button class="nav-btn active" data-view="reader">Episode 01</button>
+      <button class="nav-btn" data-view="cast">Cast</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="reader-view" class="view active" aria-labelledby="episode-heading">
+      <div class="episode-hero">
+        <div>
+          <div class="eyebrow">EPISODE 01 · V1.2 · READER-TEST</div>
+          <h1 id="episode-heading">Before Midnight</h1>
+          <p class="hero-copy">Line-numbered reader view with explicit speaker ownership. Dialogue is labeled by speaker; narration and internal reaction are visually separated.</p>
+        </div>
+        <div class="audit-card">
+          <div><strong id="total-lines">—</strong><span>story lines</span></div>
+          <div><strong id="dialogue-count">—</strong><span>dialogue blocks</span></div>
+          <div><strong id="unknown-count">—</strong><span>unknown speakers</span></div>
+        </div>
+      </div>
+
+      <div class="reader-layout">
+        <aside class="scene-sidebar">
+          <div class="sidebar-head">
+            <div class="sidebar-title">Acts & scenes</div>
+            <button id="sidebar-close" class="icon-btn mobile-only" aria-label="Close scene menu">×</button>
+          </div>
+          <div id="scene-nav"></div>
+        </aside>
+
+        <section class="reader-panel">
+          <div class="reader-toolbar">
+            <button id="scene-menu" class="toolbar-btn mobile-only">Scenes</button>
+            <div class="toolbar-group">
+              <label for="speaker-filter">Speaker</label>
+              <select id="speaker-filter">
+                <option value="all">All lines</option>
+              </select>
+            </div>
+            <div class="toolbar-legend" aria-label="Legend">
+              <span class="legend speaker-legend">Speaker</span>
+              <span class="legend narrator-legend">Narrator / thought</span>
+            </div>
+          </div>
+
+          <header class="scene-header">
+            <div class="scene-act" id="current-act"></div>
+            <h2 id="current-scene"></h2>
+            <div class="scene-range" id="scene-range"></div>
+          </header>
+
+          <div id="story-lines" class="story-lines" aria-live="polite"></div>
+
+          <div class="scene-footer">
+            <button id="prev-scene" class="scene-step">← Previous scene</button>
+            <button id="next-scene" class="scene-step">Next scene →</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="cast-view" class="view" aria-labelledby="cast-heading">
+      <header class="cast-header">
+        <div class="eyebrow">MIDNIGHT BET</div>
+        <h1 id="cast-heading">Character Cast</h1>
+        <p>Clean-slate cast gallery retained from the existing site.</p>
+      </header>
+      <section class="grid">
+        <article class="card"><img src="assets/characters/MIRA.jpg" alt="Mira"><div class="name">Mira</div></article>
+        <article class="card"><img src="assets/characters/RHEA.jpg" alt="Rhea"><div class="name">Rhea</div></article>
+        <article class="card"><img src="assets/characters/NAINA.jpg" alt="Naina"><div class="name">Naina</div></article>
+        <article class="card"><img src="assets/characters/ANANYA.jpg" alt="Ananya"><div class="name">Ananya</div></article>
+        <article class="card"><img src="assets/characters/SHALINI.jpg" alt="Shalini"><div class="name">Shalini</div></article>
+        <article class="card"><img src="assets/characters/TARA.jpg" alt="Tara"><div class="name">Tara</div></article>
+        <article class="card"><img src="assets/characters/NEHA.jpg" alt="Neha"><div class="name">Neha</div></article>
+        <article class="card"><img src="assets/characters/SANA.jpg" alt="Sana"><div class="name">Sana</div></article>
+        <article class="card"><img src="assets/characters/MEERA_KHANA.png" alt="Meera Khana"><div class="name">Meera Khana</div></article>
+      </section>
+    </section>
+  </main>
+</div>
+<script src="app.js" defer></script>
 </body>
 </html>

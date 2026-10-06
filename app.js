@@ -3,6 +3,97 @@ const EPISODES = {
   2: { url: "data/episode-02-v1.3.json", label: "Episode 02" }
 };
 
+const STORY_HIGHLIGHTS = [
+  { phrase: "upper chest", category: "visibility" },
+  { phrase: "upper curve", category: "visibility" },
+  { phrase: "open neckline", category: "visibility" },
+  { phrase: "neckline", category: "visibility" },
+  { phrase: "bare shoulder", category: "visibility" },
+  { phrase: "bare shoulders", category: "visibility" },
+  { phrase: "bare arms", category: "visibility" },
+  { phrase: "sleeveless", category: "visibility" },
+  { phrase: "pallu slid from her shoulder", category: "visibility" },
+  { phrase: "pallu", category: "visibility" },
+  { phrase: "shawl", category: "visibility" },
+  { phrase: "shrug", category: "visibility" },
+  { phrase: "waist exposed", category: "visibility" },
+  { phrase: "waist", category: "visibility" },
+  { phrase: "visible", category: "visibility" },
+  { phrase: "exposed", category: "visibility" },
+  { phrase: "uncovered line", category: "visibility" },
+  { phrase: "more open", category: "visibility" },
+  { phrase: "without the shawl", category: "visibility" },
+  { phrase: "without the shrug", category: "visibility" },
+  { phrase: "blouse line", category: "visibility" },
+
+  { phrase: "eyes dropped", category: "gaze" },
+  { phrase: "eyes moved", category: "gaze" },
+  { phrase: "eyes shifted", category: "gaze" },
+  { phrase: "trying not to look again", category: "gaze" },
+  { phrase: "looked again", category: "gaze" },
+  { phrase: "watching", category: "gaze" },
+  { phrase: "noticed", category: "gaze" },
+  { phrase: "register that she looked different", category: "gaze" },
+  { phrase: "caught the movement", category: "gaze" },
+
+  { phrase: "deliberately", category: "choice" },
+  { phrase: "she had chosen", category: "choice" },
+  { phrase: "she chose", category: "choice" },
+  { phrase: "chosen the clothes", category: "choice" },
+  { phrase: "chosen the place", category: "choice" },
+  { phrase: "could have", category: "choice" },
+  { phrase: "did not cover", category: "choice" },
+  { phrase: "did not straighten immediately", category: "choice" },
+  { phrase: "held the position", category: "choice" },
+  { phrase: "one extra beat", category: "choice" },
+  { phrase: "another beat", category: "choice" },
+  { phrase: "several more seconds", category: "choice" },
+  { phrase: "several seconds", category: "choice" },
+  { phrase: "left the shawl", category: "choice" },
+  { phrase: "slipped the overshirt", category: "choice" },
+  { phrase: "put the overshirt back on", category: "choice" },
+  { phrase: "restored the pallu", category: "choice" },
+  { phrase: "pulled the shawl back", category: "choice" },
+  { phrase: "stayed where she was", category: "choice" },
+
+  { phrase: "he knew she had seen", category: "awareness" },
+  { phrase: "she knew he knew", category: "awareness" },
+  { phrase: "mutual awareness", category: "awareness" },
+  { phrase: "both recognized", category: "awareness" },
+  { phrase: "met her eyes", category: "awareness" },
+  { phrase: "eye contact", category: "awareness" },
+  { phrase: "understood the entire triangle", category: "awareness" },
+  { phrase: "pulse", category: "awareness" },
+  { phrase: "rush", category: "awareness" },
+  { phrase: "breathing", category: "awareness" },
+  { phrase: "tightened", category: "awareness" },
+  { phrase: "felt exposed", category: "awareness" },
+  { phrase: "face warmed", category: "awareness" },
+  { phrase: "replayed", category: "awareness" },
+  { phrase: "replay", category: "awareness" },
+
+  { phrase: "joined fingers", category: "couple" },
+  { phrase: "forehead briefly against his shoulder", category: "couple" },
+  { phrase: "held her hand", category: "couple" },
+  { phrase: "placed his hand over it", category: "couple" },
+  { phrase: "touched rhea’s wrist", category: "couple" },
+  { phrase: "caught the front of his shirt", category: "couple" }
+].sort((a, b) => b.phrase.length - a.phrase.length);
+
+const HIGHLIGHT_LABELS = {
+  visibility: "Body / visibility",
+  gaze: "Gaze / reaction",
+  choice: "Deliberate choice",
+  awareness: "Awareness / aftermath",
+  couple: "Couple intimacy"
+};
+
+const HIGHLIGHT_MAP = new Map(STORY_HIGHLIGHTS.map(item => [item.phrase.toLowerCase(), item.category]));
+const HIGHLIGHT_RE = new RegExp(
+  STORY_HIGHLIGHTS.map(item => item.phrase.replace(/[.*+?^\${}()|[\]\\]/g, "\\const state = {")).join("|"),
+  "gi"
+);
+
 const state = {
   data: null,
   scenes: [],
@@ -256,21 +347,60 @@ function renderLine(line) {
     ? `<span class="speaker-chip">${escapeHtml(line.speaker)}</span><span class="line-kind">Dialogue + action</span>`
     : '<span class="narrator-chip">Narrator / thought</span><span class="line-kind">Narration / inner reaction</span>';
 
+  const categories = getHighlightCategories(line.text);
+  const externalCategories = categories.filter(category => category !== "couple");
+  const isKeyEscalation = externalCategories.length >= 2 ||
+    (externalCategories.includes("choice") && (externalCategories.includes("visibility") || externalCategories.includes("gaze")));
+  const isCoupleBeat = categories.includes("couple") && externalCategories.length === 0;
+
+  const beatBadge = isKeyEscalation
+    ? `<span class="beat-badge escalation-badge">KEY ESCALATION · ${externalCategories.map(c => HIGHLIGHT_LABELS[c]).join(" + ")}</span>`
+    : isCoupleBeat
+      ? '<span class="beat-badge couple-badge">COUPLE INTIMACY · SEPARATE TRACK</span>'
+      : "";
+
+  const beatClass = isKeyEscalation ? " key-escalation-line" : (isCoupleBeat ? " couple-intimacy-line" : "");
   const domId = `E${state.episode}-${line.id}`;
 
   return `
-    <article class="story-line ${line.kind}" id="${domId}">
+    <article class="story-line ${line.kind}${beatClass}" id="${domId}">
       <a class="line-number" href="#${domId}" aria-label="Link to Episode ${state.episode} ${line.id}">${line.id}</a>
       <div class="line-body">
-        <div class="line-meta">${speakerMeta}</div>
-        <p>${highlightQuotes(line.text)}</p>
+        <div class="line-meta">${speakerMeta}${beatBadge}</div>
+        <p>${highlightStoryText(line.text)}</p>
       </div>
     </article>`;
 }
 
-function highlightQuotes(text) {
-  const safe = escapeHtml(text);
-  return safe
+function getHighlightCategories(text) {
+  const lower = text.toLowerCase();
+  return [...new Set(
+    STORY_HIGHLIGHTS
+      .filter(item => lower.includes(item.phrase.toLowerCase()))
+      .map(item => item.category)
+  )];
+}
+
+function markImportantPhrases(text) {
+  HIGHLIGHT_RE.lastIndex = 0;
+  let html = "";
+  let lastIndex = 0;
+  let match;
+
+  while ((match = HIGHLIGHT_RE.exec(text)) !== null) {
+    html += escapeHtml(text.slice(lastIndex, match.index));
+    const category = HIGHLIGHT_MAP.get(match[0].toLowerCase()) || "visibility";
+    html += `<mark class="story-mark ${category}">${escapeHtml(match[0])}</mark>`;
+    lastIndex = match.index + match[0].length;
+  }
+
+  html += escapeHtml(text.slice(lastIndex));
+  return html;
+}
+
+function highlightStoryText(text) {
+  const marked = markImportantPhrases(text);
+  return marked
     .replace(/“([^”]+)”/g, '<span class="spoken">“$1”</span>')
     .replace(/^([A-Za-z]+:)/, '<span class="spoken">$1</span>');
 }

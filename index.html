@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0d0b10">
-<title>Midnight Bet — Episode 01 Reader</title>
+<title>Midnight Bet Reader</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,14 +15,15 @@
       <div class="brand-title">Reader</div>
     </div>
     <nav class="topnav" aria-label="Primary navigation">
-      <button class="nav-btn active" data-view="reader">Episode 01</button>
+      <button class="nav-btn active" data-episode="1">Episode 01</button>
+      <button class="nav-btn" data-episode="2">Episode 02</button>
       <button class="nav-btn" data-view="cast">Cast</button>
     </nav>
   </header>
 
   <main>
     <section id="reader-view" class="view active" aria-labelledby="episode-heading">
-      <section class="prologue" aria-labelledby="prologue-heading">
+      <section class="prologue" id="prologue" aria-labelledby="prologue-heading">
         <div class="prologue-head">
           <div class="eyebrow">PROLOGUE · BEFORE YOU READ</div>
           <h2 id="prologue-heading">One housewarming. Three marriages. One social circle.</h2>
@@ -81,9 +82,9 @@
 
       <div class="episode-hero">
         <div>
-          <div class="eyebrow">EPISODE 01 · V1.2 · READER-TEST</div>
+          <div class="eyebrow" id="episode-kicker">EPISODE 01 · V1.3 · READER-TEST</div>
           <h1 id="episode-heading">Before Midnight</h1>
-          <p class="hero-copy">Line-numbered reader view with explicit speaker ownership. Dialogue is labeled by speaker; narration and internal reaction are visually separated.</p>
+          <p class="hero-copy" id="hero-copy">Line-numbered reader view with explicit speaker ownership. Dialogue is labeled by speaker; narration and internal reaction are visually separated.</p>
         </div>
         <div class="audit-card">
           <div><strong id="total-lines">—</strong><span>story lines</span></div>

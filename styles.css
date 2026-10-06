@@ -78,3 +78,7 @@ button{font:inherit}.progress{position:fixed;z-index:1000;top:0;left:0;height:3p
   .storyContext{padding:14px 22px 20px}
   .coreSixGrid,.storyContext.compact .coreSixGrid{grid-template-columns:1fr}
 }
+
+
+.continuityWarning{max-width:920px;margin:0 auto 18px;padding:14px 18px;border:1px solid rgba(242,154,181,.34);background:rgba(242,154,181,.07);border-radius:14px;color:#eadde6;font-size:13px;line-height:1.65}
+.continuityWarning strong{color:#fff}

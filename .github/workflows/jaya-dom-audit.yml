@@ -6,7 +6,7 @@ on:
       per_story:
         description: "Sample count per story (0 checks every indexed post)"
         required: false
-        default: '3'
+        default: '0'
   push:
     paths:
       - '.github/workflows/jaya-dom-audit.yml'
@@ -33,7 +33,7 @@ jobs:
       - name: Inspect DOM selectors, no story text retained
         working-directory: story-extractor
         env:
-          PER_STORY: ${{ github.event.inputs.per_story || '3' }}
+          PER_STORY: ${{ github.event.inputs.per_story || '0' }}
         run: python verify_dom.py --per-story "$PER_STORY" --delay 2
       - name: Upload safe DOM diagnostics only
         if: always()

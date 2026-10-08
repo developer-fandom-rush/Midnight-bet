@@ -25,11 +25,15 @@ jobs:
       - name: Discover linked chapter posts only (no story text)
         working-directory: story-extractor
         run: python xossipy_jaya.py --story all --delay 2
-      - name: Upload index manifests
+      - name: Build per-episode source link maps
+        run: python story-extractor/episode_map.py
+      - name: Upload index manifests and episode maps
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: jaya-chapter-indexes
-          path: story-extractor/output/**/index.json
+          path: |
+            story-extractor/output/**/index.json
+            story-extractor/output/**/episode-map.json
           if-no-files-found: error
           retention-days: 7

@@ -249,3 +249,48 @@ https://github.com/developer-fandom-rush/Midnight-bet/actions/runs/37761747097
 verified the built-in introduction URL (1,030 characters) and the first
 Lonely Wife post (18,245 characters). This smoke-test uses
 `--inspect-only`, so no full-text file is saved by Actions.
+
+## THIRD Jaya thread — fan-written continuity from original teacher story (thread 47646)
+
+Verified source: https://xossipy.com/thread-47646.html?highlight=Jaya
+
+The author **desicocker7** explicitly says in the opening post
+(post 4838092, June 12, 2022) that this thread continues from
+https://xossipy.com/thread-14046.html at the point it had then stopped.
+**This is fan-written alternate continuity, not official continuation by
+the first thread's author; it is unrelated to the Lonely Wife thread.**
+Since the original teacher thread has subsequently received more updates,
+do not automatically append this to the latest current original chapter.
+
+The 13 forum pages were inspected for posts by this author only:
+**107 author posts**, including the continuity announcement,
+**27 long post candidates** (>=650 characters excluding quotes), and
+**79 shorter author replies flagged for separate manual review**.
+The 27 candidate links, NOT guaranteed chapter/episode labels, are at:
+`inputs/jaya-continuation-desicocker7.json`. Numbering is sequential
+discovery order; this is not an author-numbered episode index.
+Automated discovery report:
+https://github.com/developer-fandom-rush/Midnight-bet/actions/runs/37766370766
+
+In GitHub Codespaces, from the `story-extractor` directory:
+
+```bash
+# Check the first actual continuation story DOM, without writing source text
+python url_to_txt.py --story jaya-continuation-desicocker7 \
+  --inspect-only --take-first 1 --preview-words 12
+
+# For content you have permission to copy/archive, write separate .txt files:
+python url_to_txt.py --story jaya-continuation-desicocker7 \
+  --output-dir raw_txt
+```
+
+The live sample validated post 4838144 and extracted 9,185 readable
+characters in memory (no story prose saved in the CI job):
+https://github.com/developer-fandom-rush/Midnight-bet/actions/runs/37766555600
+
+The newly created separate Drive destination:
+https://drive.google.com/drive/folders/1qtQPmKdos5LoJPSbuAQNWrhIUAQL1VlI
+
+The folder is not an existing raw TXT archive; no full-text episode
+files were uploaded here. Files generated in Codespaces stay in that
+Codespace until explicitly downloaded or separately uploaded to Drive.

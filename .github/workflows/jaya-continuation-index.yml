@@ -1,0 +1,35 @@
+name: Jaya Continuation Metadata Index
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/jaya-continuation-index.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  index-continuation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r story-extractor/requirements.txt
+      - name: Offline tests
+        run: python -m unittest discover -s story-extractor/tests -v
+      - name: Collect author post links across all 13 forum pages (no story text)
+        working-directory: story-extractor
+        run: python discover_continuation.py --pages 13 --delay 2
+      - name: Upload continuation index
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jaya-continuation-author-post-index
+          path: story-extractor/output/jaya-continuation-desicocker7/author-post-index.json
+          if-no-files-found: error
+          retention-days: 7

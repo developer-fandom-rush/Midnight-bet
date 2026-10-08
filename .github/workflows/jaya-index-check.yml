@@ -5,6 +5,8 @@ on:
   push:
     paths:
       - '.github/workflows/jaya-index-check.yml'
+      - 'story-extractor/episode_map.py'
+      - 'story-extractor/tests/**'
 
 permissions:
   contents: read

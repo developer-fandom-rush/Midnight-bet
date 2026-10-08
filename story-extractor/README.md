@@ -135,3 +135,22 @@ python upload_authorized_txt.py \
 - Existing ZIPs, source registries and indexes have been **moved** under
   `Stories/Jaya Story/_Index Backups and Tracker`. They were not deleted.
 - An empty story folder is not evidence that the raw episode archive exists.
+
+## Verify real Xossipy post DOM selectors (no screenshots required)
+
+For HTML sources, DOM selection is more precise than taking page screenshots
+and using OCR. The `verify_dom.py` script validates real indexed source posts
+by selecting `#pid_<post_id>` (falling back to
+`#post_<post_id> .post_body`), verifies that extracted text is nonempty,
+and records only post IDs, selectors, byte/character counts and SHA-256.
+**It does not save or publish story text or source-page snapshots.**
+
+```bash
+python xossipy_jaya.py --story all
+python verify_dom.py --per-story 0 --delay 2
+```
+
+The GitHub Actions workflow `Jaya DOM selector audit` uses
+`--per-story 0` to inspect **all** chapter URLs in both index lists
+(42 + 18 as of the last discovery). View the workflow run for results.
+This validation is distinct from a rights-authorized full-text archive.

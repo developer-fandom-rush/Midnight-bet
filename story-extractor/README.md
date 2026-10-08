@@ -1,64 +1,63 @@
-# Jaya story extractor (raw archival)
+# Story Extractor — Jaya (two separate Xossipy stories)
 
-This folder is separate from the Midnight-bet reader. It does **not** change the existing story, UI, or episodes.
+This tool is separate from the Midnight-bet site. No existing episodes, UI, cast or story data are modified.
 
-## Current status
+## Verified source indexes
 
-The Python extraction tool is installed. The exact source/chapter URL for **"Jaya, a young college teacher"** has **not yet been verified**, so **no Jaya story text has been downloaded or committed**. The previously specified site was *Erotica PhD*, but a verified Jaya chapter URL is still needed. Do not substitute a similarly named story.
+| Slug | Title | Author | Thread | Author's index post |
+| --- | --- | --- | --- | --- |
+| `jaya-young-college-teacher` | Jaya - young college teacher | kuttoosan009 | [14046](https://xossipy.com/thread-14046.html) | [752747](https://xossipy.com/thread-14046-post-752747.html) |
+| `jaya-lonely-wife` | Jaya - A Lonely Wife's Adventures | badri.rao2006 | [38982](https://xossipy.com/thread-38982.html) | [4500941](https://xossipy.com/thread-38982-post-4500941.html) |
 
-## Setup
+**These are different stories, not confirmed continuations of each other.** The site displays 114 forum pages for thread 14046 and 24 forum pages for thread 38982; these are *not* chapter counts.
 
-Python 3.10 or newer:
+## Run index discovery for BOTH stories
+
+Python 3.10+ required.
 
 ```bash
 cd story-extractor
 python -m pip install -r requirements.txt
+python xossipy_jaya.py --story all
 ```
 
-## Extract actual story chapters
+This discovers chapter/update **post links directly from the authors' index posts**, without crawling the forum's many reader replies. It writes:
 
-First open a verified chapter in your browser and inspect its HTML to identify the CSS selector containing **only** the original story body. Optionally identify the next-chapter link CSS selector.
+```text
+output/
+  jaya-young-college-teacher/index.json
+  jaya-lonely-wife/index.json
+```
+
+Each index record has the original order, author, post ID, and canonical source URL. It intentionally keeps both stories separate. This script fetches *only the index pages* in default mode, not the story text.
+
+If a source changes its HTML structure or robots.txt denies access, the tool stops and prints an error. Verify the results and do not interpret missing links as missing chapters. Some updates may not be in the author's index. Discovering continuations is a separate task.
+
+## Archival mode (only for content you are authorized to copy)
+
+To save source-response HTML and readable post text to your local machine (not GitHub), use:
 
 ```bash
-python extract_jaya.py \
-  --url "https://EXACT-SOURCE-SITE/EXACT-JAYA-CHAPTER-1" \
-  --selector ".ACTUAL-STORY-BODY-SELECTOR" \
-  --next-selector "a.ACTUAL-NEXT-CHAPTER-SELECTOR" \
-  --max-pages 100 \
-  --delay 2
+python xossipy_jaya.py --story all --archive --confirm-rights
 ```
 
-If the source does not have consistent next links, supply a URL list instead:
+- Each archived chapter gets a raw downloaded `.html` response and a `.txt` containing text extracted from only the linked post, not adjacent reader comments.
+- `private_archive/manifest.json` records source post links, response hashes, text hashes, text character counts, and timestamps.
+- Already manifested posts are skipped on subsequent runs; unexpected existing files stop the process rather than silently overwriting them.
+- The text rendering preserves authored words but HTML-to-text layout can change whitespace. Keep original HTML as the fidelity reference.
+- The entire `output/` directory is Git-ignored. **Do not commit or publish third-party story text** without rights or permission.
+- The utility respects robots.txt and request delays. It does not bypass login, CAPTCHA, rate limits, paywalls or other access controls.
 
-```bash
-python extract_jaya.py \
-  --chapter-list jaya-chapters.txt \
-  --selector ".ACTUAL-STORY-BODY-SELECTOR"
-```
+The earlier generic `extract_jaya.py` remains available for other verified, authorized sources, but `xossipy_jaya.py` is the recommended index-driven workflow for these two links.
 
-Create `jaya-chapters.txt` as a UTF-8 file with one real chapter URL per line in order. Use `--resume` after interruption; completed URLs are skipped and existing files are not overwritten.
-
-## Output
-
-The local ignored folder `output/jaya/` receives:
-
-- `chapter_001.html`: **original downloaded HTML response bytes** (the authoritative snapshot).
-- `chapter_001.txt`: readable text directly extracted from the specified page element, including text in inline markup, breaks, and paragraph boundaries. This is not an edited or summarized version.
-- `manifest.json`: verified source URL, resolved URL, chapter order, capture timestamp, text character count, next-page URL, and SHA-256 hashes for HTML and text.
-
-Word-for-word fidelity is checked against the HTML snapshot; HTML layout/whitespace can differ from plaintext. Readable text is not necessarily byte-for-byte identical to the source markup.
-
-## Safeguards
-
-- Does not discover a story by guessing its title or replace it with search results.
-- Respects `robots.txt`, server errors, request delays and same-site links.
-- Does not bypass paywalls, CAPTCHA, authentication, or access restrictions.
-- Stops if the CSS selector fails or extracted content is unusually short.
-- Does not automatically commit scraped story content into this **public** GitHub repository.
-- Only archive or redistribute a work if you own it or have permission to do so.
-
-## Run local tests
+## Local offline unit tests
 
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+## Work status
+
+- Verified both story titles, distinct authors, and index post links.
+- Source-specific extraction/index-discovery Python code committed to GitHub.
+- Full story extraction has **not** been run or uploaded. Publicly accessible text is not automatically licensed for republication, and live crawler execution was unavailable in this session.

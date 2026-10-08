@@ -98,10 +98,11 @@
       "source_url": "https://xossipy.com/thread-14046-post-902784.html",
       "source_post_id": 902784,
       "episode_number": 9,
-      "part": "2",
+      "part": null,
       "section": "update",
       "index_order": 11,
-      "episode_number_basis": "author_update"
+      "episode_number_basis": "author_update",
+      "part_verification": "not_present_in_index_label"
     },
     {
       "source_url": "https://xossipy.com/thread-14046-post-1063638.html",

@@ -1,0 +1,35 @@
+name: Jaya Index Check
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/jaya-index-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-indexes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r story-extractor/requirements.txt
+      - name: Offline unit tests
+        run: python -m unittest discover -s story-extractor/tests -v
+      - name: Discover linked chapter posts only (no story text)
+        working-directory: story-extractor
+        run: python xossipy_jaya.py --story all --delay 2
+      - name: Upload index manifests
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jaya-chapter-indexes
+          path: story-extractor/output/**/index.json
+          if-no-files-found: error
+          retention-days: 7

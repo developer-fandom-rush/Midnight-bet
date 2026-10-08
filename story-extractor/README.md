@@ -61,3 +61,19 @@ python -m unittest discover -s tests -v
 - Verified both story titles, distinct authors, and index post links.
 - Source-specific extraction/index-discovery Python code committed to GitHub.
 - Full story extraction has **not** been run or uploaded. Publicly accessible text is not automatically licensed for republication, and live crawler execution was unavailable in this session.
+
+## Optional automated sync: save both chapter-link indexes to Google Drive
+
+This workflow uploads **link metadata only**, not copyrighted text or HTML. It requires a Google identity with write access to your existing Stories / Jaya Story folder. Keep authentication credentials out of Git.
+
+```bash
+cd story-extractor
+python -m pip install -r requirements-drive.txt
+python xossipy_jaya.py --story all
+python sync_indexes_to_drive.py --dry-run
+python sync_indexes_to_drive.py --folder-id YOUR_JAYA_STORY_FOLDER_ID
+```
+
+This sync validates the chapter post URLs and writes one `*-chapter-links.json` file per story. If a file already exists with the same name in the destination folder, it updates that file rather than creating duplicates. Uses Google Application Default Credentials (`google.auth.default`), with Google Drive authorization handled outside this repository. The sync never uploads `private_archive` or `*.txt` chapter files.
+
+**Execution status:** The GitHub code has been committed, but the remote Xossipy scraping, full chapter text archive, and automatic Drive sync have not run in this session. A source tracker document with both index links has been saved directly to the existing Drive folder.

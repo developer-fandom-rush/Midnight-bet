@@ -1,0 +1,33 @@
+name: Jaya URL to DOM smoke test
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/jaya-url-to-txt-smoke.yml'
+      - 'story-extractor/url_to_txt.py'
+      - 'story-extractor/bundled_urls.py'
+      - 'story-extractor/inputs/**'
+
+permissions:
+  contents: read
+
+jobs:
+  source-dom-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install parser
+        run: python -m pip install -r story-extractor/requirements.txt
+      - name: Validate offline URL to TXT behavior
+        run: python -m unittest discover -s story-extractor/tests -v
+      - name: Verify first real teacher episode DOM and text sample
+        working-directory: story-extractor
+        run: python url_to_txt.py --story jaya-young-college-teacher --inspect-only --take-first 1 --preview-words 12
+      - name: Verify first real lonely-wife episode DOM and text sample
+        working-directory: story-extractor
+        run: python url_to_txt.py --story jaya-lonely-wife --inspect-only --take-first 1 --preview-words 12

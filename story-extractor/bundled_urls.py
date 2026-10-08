@@ -5,8 +5,8 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 
-STORY_SLUGS = ("jaya-young-college-teacher", "jaya-lonely-wife")
-STORY_THREADS = {"jaya-young-college-teacher": 14046, "jaya-lonely-wife": 38982}
+STORY_SLUGS = ("jaya-young-college-teacher", "jaya-lonely-wife", "jaya-continuation-desicocker7")
+STORY_THREADS = {"jaya-young-college-teacher": 14046, "jaya-lonely-wife": 38982, "jaya-continuation-desicocker7": 47646}
 
 
 def bundled_pages(story: str = "all") -> list[tuple[str, dict]]:

@@ -8,6 +8,7 @@ on:
       - 'story-extractor/url_to_txt.py'
       - 'story-extractor/bundled_urls.py'
       - 'story-extractor/inputs/**'
+      - 'story-extractor/tests/**'
 
 permissions:
   contents: read
@@ -31,3 +32,6 @@ jobs:
       - name: Verify first real lonely-wife episode DOM and text sample
         working-directory: story-extractor
         run: python url_to_txt.py --story jaya-lonely-wife --inspect-only --take-first 1 --preview-words 12
+      - name: Verify Jaya fan continuation first candidate DOM (preview only)
+        working-directory: story-extractor
+        run: python url_to_txt.py --story jaya-continuation-desicocker7 --inspect-only --take-first 1 --preview-words 12

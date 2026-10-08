@@ -1,0 +1,45 @@
+name: Jaya DOM selector audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      per_story:
+        description: "Sample count per story (0 checks every indexed post)"
+        required: false
+        default: '3'
+  push:
+    paths:
+      - '.github/workflows/jaya-dom-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r story-extractor/requirements.txt
+      - name: Offline tests
+        run: python -m unittest discover -s story-extractor/tests -v
+      - name: Load author chapter indexes
+        working-directory: story-extractor
+        run: python xossipy_jaya.py --story all --delay 2
+      - name: Inspect DOM selectors, no story text retained
+        working-directory: story-extractor
+        env:
+          PER_STORY: ${{ github.event.inputs.per_story || '3' }}
+        run: python verify_dom.py --per-story "$PER_STORY" --delay 2
+      - name: Upload safe DOM diagnostics only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jaya-dom-metadata-only
+          path: story-extractor/output/dom-audit.json
+          if-no-files-found: warn
+          retention-days: 7

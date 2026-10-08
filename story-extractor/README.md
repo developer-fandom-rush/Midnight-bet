@@ -102,3 +102,36 @@ https://drive.google.com/file/d/1w9GEFW6UIImJo7YpUvNesWI65JyvE_Ws/view
 
 **Note:** These files are maps of where to read original posts, not
 verbatim copies of the author's story chapters.
+
+## Direct episode TXT upload to Google Drive (NO ZIP)
+
+Drive destination folders already created:
+
+- Young College Teacher: https://drive.google.com/drive/folders/1RR8-qrPC8Dky5t9uSs3_t0gQd5W5dm7Y
+- A Lonely Wife's Adventures: https://drive.google.com/drive/folders/1RyvJENbbg35KslAAJzfvdQOyUTRC7Pgm
+
+If you own the source material or have permission to copy/archive it, run the local
+authorized archive step described above (which produces
+`output/<story>/private_archive/post_*.txt` and the manifest). Next build
+episode maps with `python episode_map.py`.
+
+Then install the Drive dependencies and upload individual TXT files:
+
+```bash
+python -m pip install -r requirements-drive.txt
+python upload_authorized_txt.py \
+  --teacher-folder-id 1RR8-qrPC8Dky5t9uSs3_t0gQd5W5dm7Y \
+  --lonely-folder-id 1RyvJENbbg35KslAAJzfvdQOyUTRC7Pgm \
+  --upload --rights-confirmed
+```
+
+- Creates **individual** `EP_001_Post_*.txt` etc., preserving separate multipart posts.
+- No ZIP archives, placeholders or story summaries are uploaded.
+- Checks local episode-map post IDs, URLs and SHA-256 hashes before upload.
+- Does not commit third-party writing to the public GitHub repository.
+- Defaults to dry-run unless both `--upload` and `--rights-confirmed` are set.
+- If an existing target TXT has changed, upload stops rather than overwriting it. Use
+  `--overwrite` only after comparing the local authorized version.
+- Existing ZIPs, source registries and indexes have been **moved** under
+  `Stories/Jaya Story/_Index Backups and Tracker`. They were not deleted.
+- An empty story folder is not evidence that the raw episode archive exists.

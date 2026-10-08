@@ -37,12 +37,24 @@ def normalize_entry(entry: dict, slug: str) -> dict:
             else:
                 # An unnumbered entry is not silently assigned an author update.
                 category = "unresolved"
+        # Part notation may appear as "Part-1 & Part-2", "Part-4 A&B",
+        # or as a letter immediately after an update number (Update-17 A/B).
         part_match = re.search(
-            r"\bpart\s*[-–—:.]?\s*(\d+(?:\s*&\s*[a-z\d]+)?|[a-z](?:\s*&\s*[a-z])?)\b",
+            r"\\bpart\\s*[-–—:.]?\\s*(\\d+)(?:\\s*&\\s*(?:part\\s*[-–—:.]?\\s*)?(\\d+))?\\b",
             label, re.I,
         )
         if part_match:
-            part = " ".join(part_match.group(1).upper().split())
+            part = part_match.group(1)
+            if part_match.group(2):
+                part += " & " + part_match.group(2)
+            tail = label[part_match.end():]
+            letter_parts = re.match(r"\\s*([A-Z])\\s*&\\s*([A-Z])\\b", tail, re.I)
+            if letter_parts:
+                part += " " + letter_parts.group(1).upper() + "&" + letter_parts.group(2).upper()
+        else:
+            update_letter = re.search(r"\\bupdate\\s*[-–—:]?\\s*\\d+\\s+([A-Z])\\s*(?:[-–—]|$)", label, re.I)
+            if update_letter:
+                part = update_letter.group(1).upper()
 
     return {
         "index_order": sequence,

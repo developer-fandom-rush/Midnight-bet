@@ -154,3 +154,17 @@ The GitHub Actions workflow `Jaya DOM selector audit` uses
 `--per-story 0` to inspect **all** chapter URLs in both index lists
 (42 + 18 as of the last discovery). View the workflow run for results.
 This validation is distinct from a rights-authorized full-text archive.
+
+### Verified DOM audit result — October 8, 2026
+
+The all-post workflow completed successfully:
+https://github.com/developer-fandom-rush/Midnight-bet/actions/runs/37757081000
+
+- 60 of 60 directly indexed Xossipy posts passed DOM body lookup
+  (42 Young College Teacher, 18 Lonely Wife).
+- 0 missing post bodies; all 18 offline tests passed.
+- Text lengths and SHA-256 were computed in memory solely to validate
+  selection, not persisted as full story content.
+- Nothing from this audit should be represented as archived `.txt`
+  episodes; the two Drive story folders remain unfilled pending
+  independently authorized source copies.

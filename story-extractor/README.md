@@ -77,3 +77,28 @@ python sync_indexes_to_drive.py --folder-id YOUR_JAYA_STORY_FOLDER_ID
 This sync validates the chapter post URLs and writes one `*-chapter-links.json` file per story. If a file already exists with the same name in the destination folder, it updates that file rather than creating duplicates. Uses Google Application Default Credentials (`google.auth.default`), with Google Drive authorization handled outside this repository. The sync never uploads `private_archive` or `*.txt` chapter files.
 
 **Execution status:** The GitHub code has been committed, but the remote Xossipy scraping, full chapter text archive, and automatic Drive sync have not run in this session. A source tracker document with both index links has been saved directly to the existing Drive folder.
+
+## Episode-based mappings (source links only)
+
+After the index discovery, build the two episode maps:
+
+```bash
+python episode_map.py --source-root output
+```
+
+This creates `output/<story>/episode-map.json` for each story. For
+**Young College Teacher**, the 42 direct linked posts are grouped under
+**Introduction + 33 author-numbered updates**; some updates have multiple
+post links/parts. For **A Lonely Wife's Adventures**, the index contains
+**18 linked posts**; the numeric EP-001…EP-018 sequence is assigned from
+index order rather than author-provided episode numbers. Each entry keeps
+its original post ID and permalink.
+
+Verified GitHub Actions metadata/index run:
+https://github.com/developer-fandom-rush/Midnight-bet/actions/runs/37753740419
+
+Verified episode-mapping ZIP saved to Drive:
+https://drive.google.com/file/d/1w9GEFW6UIImJo7YpUvNesWI65JyvE_Ws/view
+
+**Note:** These files are maps of where to read original posts, not
+verbatim copies of the author's story chapters.

@@ -216,3 +216,36 @@ Use the separate authorized-archive Drive uploader only when its
 expected manifest and matching source files are present.
 
 Offline tests: `python -m unittest discover -s tests -v`.
+
+## Built-in Jaya URL inputs — no manual URL paste needed
+
+All **60 source post URLs** are committed as separate input files:
+
+- `inputs/jaya-young-college-teacher.json` — 42 post URLs, author update/part numbers
+- `inputs/jaya-lonely-wife.json` — 18 post URLs, index-order numbers
+
+`url_to_txt.py` **now reads both files by default**. Run from
+`story-extractor/` with the dependencies installed:
+
+```bash
+# Live source DOM proof without persisting third-party story prose
+python url_to_txt.py --story jaya-young-college-teacher --take-first 1 --inspect-only --preview-words 12
+python url_to_txt.py --story jaya-lonely-wife --take-first 1 --inspect-only --preview-words 12
+
+# For material you are authorized to copy, direct URL -> original post div -> TXT
+python url_to_txt.py --story jaya-young-college-teacher --output-dir raw_txt
+python url_to_txt.py --story jaya-lonely-wife --output-dir raw_txt
+
+# Or both stories in one command, saved in separate story subfolders
+python url_to_txt.py --output-dir raw_txt
+```
+
+The script identifies `#pid_{post_id}` (fallback `#post_{post_id} .post_body`),
+extracts the post content only, preserves readable line breaks and writes
+one `.txt` per linked post in its matching story directory.
+
+**Actual live extraction proof:** GitHub Actions
+https://github.com/developer-fandom-rush/Midnight-bet/actions/runs/37761747097
+verified the built-in introduction URL (1,030 characters) and the first
+Lonely Wife post (18,245 characters). This smoke-test uses
+`--inspect-only`, so no full-text file is saved by Actions.

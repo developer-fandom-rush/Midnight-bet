@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from bundled_urls import bundled_pages
 from url_to_txt import (
     filename_for_url, identity_from_url, input_pages, run, story_text_from_dom
 )
@@ -119,6 +120,48 @@ class UrlToTxtTests(unittest.TestCase):
         args=arguments(Path("/unused"),"https://example.org/chapter-1")
         with self.assertRaisesRegex(ValueError, "Auto selector"):
             input_pages(args)
+
+    def test_embedded_real_urls_both_stories(self):
+        teacher = bundled_pages("jaya-young-college-teacher")
+        wife = bundled_pages("jaya-lonely-wife")
+        all_pages = bundled_pages("all")
+        self.assertEqual((len(teacher), len(wife), len(all_pages)), (42, 18, 60))
+        self.assertEqual(teacher[0][0], "https://xossipy.com/thread-14046-post-752484.html")
+        self.assertEqual(teacher[-1][0], "https://xossipy.com/thread-14046-post-5790130.html")
+        self.assertEqual(wife[0][0], "https://xossipy.com/thread-38982-post-3471082.html")
+        self.assertEqual(wife[-1][0], "https://xossipy.com/thread-38982-post-4695495.html")
+        self.assertEqual(teacher[0][1]["episode_number"], 0)
+        self.assertEqual(teacher[9][1]["episode_number"], 9)
+        self.assertEqual(teacher[10][1]["episode_number"], 9)
+        self.assertEqual(teacher[-1][1]["episode_number"], 33)
+        self.assertEqual(wife[-1][1]["episode_number_basis"], "index_order_assigned")
+
+    def test_no_input_uses_embedded_urls(self):
+        args=arguments(Path("/unused"))
+        args.url=[]
+        pages=input_pages(args)
+        self.assertEqual(len(pages),60)
+        self.assertEqual(pages[0][1]["story"], "jaya-young-college-teacher")
+        self.assertEqual(pages[-1][1]["story"], "jaya-lonely-wife")
+
+    def test_bundled_inspect_only_does_not_write_raw_text(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            target=Path(tmp)/"raw_txt"
+            args=arguments(target)
+            args.url=[]
+            args.story="jaya-young-college-teacher"
+            args.take_first=1
+            args.inspect_only=True
+            args.preview_words=12
+            # Fixture post uses post_555, so patch selector solely for offline transport;
+            # this checks output path/metadata and no story file writes.
+            with patch("url_to_txt.robots_permission", return_value=(True, 0)), \
+                 patch("url_to_txt.story_text_from_dom",
+                       return_value=("This is a fixture-only source sample of text.", "#pid_752484")):
+                report=run(args,session=FakeSession())
+            self.assertEqual(report["records"][0]["status"], "inspected")
+            self.assertTrue(report["records"][0]["relative_path"].startswith("jaya-young-college-teacher/"))
+            self.assertFalse(target.exists(), "inspect-only must not create raw TXT or status file")
 
 
 if __name__ == "__main__":

@@ -124,8 +124,9 @@ class UrlToTxtTests(unittest.TestCase):
     def test_embedded_real_urls_both_stories(self):
         teacher = bundled_pages("jaya-young-college-teacher")
         wife = bundled_pages("jaya-lonely-wife")
+        continuation = bundled_pages("jaya-continuation-desicocker7")
         all_pages = bundled_pages("all")
-        self.assertEqual((len(teacher), len(wife), len(all_pages)), (42, 18, 60))
+        self.assertEqual((len(teacher), len(wife), len(continuation), len(all_pages)), (42, 18, 27, 87))
         self.assertEqual(teacher[0][0], "https://xossipy.com/thread-14046-post-752484.html")
         self.assertEqual(teacher[-1][0], "https://xossipy.com/thread-14046-post-5790130.html")
         self.assertEqual(wife[0][0], "https://xossipy.com/thread-38982-post-3471082.html")
@@ -135,14 +136,17 @@ class UrlToTxtTests(unittest.TestCase):
         self.assertEqual(teacher[10][1]["episode_number"], 9)
         self.assertEqual(teacher[-1][1]["episode_number"], 33)
         self.assertEqual(wife[-1][1]["episode_number_basis"], "index_order_assigned")
+        self.assertEqual(continuation[0][0], "https://xossipy.com/thread-47646-post-4838144.html")
+        self.assertEqual(continuation[-1][0], "https://xossipy.com/thread-47646-post-6022742.html")
+        self.assertEqual(continuation[-1][1]["episode_number_basis"], "index_order_assigned_candidate")
 
     def test_no_input_uses_embedded_urls(self):
         args=arguments(Path("/unused"))
         args.url=[]
         pages=input_pages(args)
-        self.assertEqual(len(pages),60)
+        self.assertEqual(len(pages),87)
         self.assertEqual(pages[0][1]["story"], "jaya-young-college-teacher")
-        self.assertEqual(pages[-1][1]["story"], "jaya-lonely-wife")
+        self.assertEqual(pages[-1][1]["story"], "jaya-continuation-desicocker7")
 
     def test_bundled_inspect_only_does_not_write_raw_text(self):
         with tempfile.TemporaryDirectory() as tmp:

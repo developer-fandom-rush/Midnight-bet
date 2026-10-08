@@ -168,3 +168,51 @@ https://github.com/developer-fandom-rush/Midnight-bet/actions/runs/37757081000
 - Nothing from this audit should be represented as archived `.txt`
   episodes; the two Drive story folders remain unfilled pending
   independently authorized source copies.
+
+## URL -> story DOM -> individual RAW TXT files
+
+Run the actual text extractor (not the earlier metadata-only DOM audit):
+
+```bash
+cd story-extractor
+python -m pip install -r requirements.txt
+
+# ONE page URL -> ONE text file
+python url_to_txt.py \
+  --url "https://xossipy.com/thread-14046-post-752861.html" \
+  --output-dir "./raw_txt/young-college-teacher"
+
+# MANY page URLs (one per line in a local input.txt file)
+python url_to_txt.py --url-file input.txt --output-dir "./raw_txt"
+
+# Existing episode map -> separate episode-numbered text files
+python xossipy_jaya.py --story all
+python episode_map.py
+python url_to_txt.py \
+  --episode-map output/jaya-young-college-teacher/episode-map.json \
+  --output-dir "./raw_txt/young-college-teacher"
+python url_to_txt.py \
+  --episode-map output/jaya-lonely-wife/episode-map.json \
+  --output-dir "./raw_txt/lonely-wife"
+```
+
+**DOM rule:** From Xossipy `thread-N-post-P.html` URL, select
+`#pid_P` (fallback `#post_P .post_body`), using that URL's post ID.
+Do not select a whole `thread` div or other people's replies.
+On unrelated sites, pass an explicit selector such as
+`--selector "div.chapter-content"`; exactly one match must exist.
+
+**Output:** One UTF-8 `EP_###_Post_#.txt` or mapped
+`EP_###_Part_#_Post_#.txt` per page, and
+`extraction-status.json` recording which individual files were
+saved, skipped or failed. The status JSON is supplementary: **actual
+text is written to the .txt files**. No ZIP, no summaries.
+
+**Scope:** The script is a local utility for material you are
+authorized to copy or archive. It is not run by the public GitHub
+Actions audit, and the repository does not contain original authors'
+full story text. It does not upload story text to Drive by itself.
+Use the separate authorized-archive Drive uploader only when its
+expected manifest and matching source files are present.
+
+Offline tests: `python -m unittest discover -s tests -v`.

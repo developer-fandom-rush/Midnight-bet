@@ -1,0 +1,25 @@
+name: Jaya Lonely Wife Continuity Review
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/jaya-lonely-continuity-review.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r story-extractor/requirements.txt
+      - name: Inspect 18 exact post DOM bodies for character and pacing signals; no story archive
+        working-directory: story-extractor
+        run: python audit_lonely_continuity.py

@@ -40,3 +40,13 @@ To read the public GitHub Pages UI with complete RAW, use **Open private dataset
 GitHub commit exists. GitHub Pages availability should be checked independently; committing the file does not by itself prove the deployment was live at the time of the commit.
 
 No changes were made to the root Midnight Bet UI files.
+
+
+## Translation correction / verified update (10 Oct 2026)
+- 727 / 727 correctly attributed **Uncle-related** rows have line-aligned Hinglish translations. This is **not** translation of all 68 full episodes.
+- 795 aligned translated cells total; 13,638 nonblank RAW lines in the full reader; 12,843 remain untranslated outside the completed Uncle-related track.
+- Local-language terminology in translation is literal to the original where applicable (e.g., lund, chut, chuchiyaan); no invented action replaces a source line.
+- An audit separates plumber Iroh from neighbor Uncle in 8 formerly ambiguous/mistagged ledger entries; original RAW kept unchanged.
+- Latest private files are in connected Google Drive > Stories > DHIKA Story > UNCLE_READER: `Uncle_Source_Locked_Reader_E01-E68_Translated_727.html`, `Uncle_Source_Locked_Data_E01-E68_Translated_727.json`, `Uncle_Translation_Progress_QA_20261010.json`.
+- To see new translations on the public site, use **Open private dataset** and select the new bilingual JSON. For no-import reading, use the standalone offline HTML from Drive.
+- The old private dataset and old standalone reader versions are outdated. Pending translation cells must never be described as finished.

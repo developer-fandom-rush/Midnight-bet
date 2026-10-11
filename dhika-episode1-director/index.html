@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dhika E01 Director Board</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Dhika Story Engine</p>
+        <h1>Episode 01 Director Board</h1>
+      </div>
+      <div class="top-actions">
+        <button id="copyPacketBtn" type="button">Copy director packet</button>
+        <button id="clearBtn" type="button">Clear RAW</button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="panel controls" aria-labelledby="load-title">
+        <h2 id="load-title">RAW Load</h2>
+        <p class="muted">
+          Load <strong>00_DHIKA_COMPLETE_RAW.txt</strong>. Text stays in this browser.
+          The board reads Episode 01, assigns line refs, and connects every director claim to source refs.
+        </p>
+
+        <label class="file-drop" for="rawFileInput">
+          <span>Choose RAW file</span>
+          <small>Expected: complete raw with EPISODE 1 and EPISODE 2 markers</small>
+        </label>
+        <input id="rawFileInput" type="file" accept=".txt,text/plain" />
+
+        <label class="text-load">
+          <span>Or paste RAW text</span>
+          <textarea id="rawPaste" rows="7" placeholder="Paste complete RAW here..."></textarea>
+        </label>
+        <button id="loadPasteBtn" type="button">Load pasted RAW</button>
+
+        <div id="loadStatus" class="status warn">
+          RAW not loaded. Breakdown and director map are ready; exact lines will appear after loading.
+        </div>
+
+        <div class="metric-grid" aria-label="Episode metrics">
+          <div>
+            <span id="lineCount">0</span>
+            <small>E01 lines loaded</small>
+          </div>
+          <div>
+            <span id="blockCount">0</span>
+            <small>breakdown blocks</small>
+          </div>
+          <div>
+            <span id="lockedCount">0</span>
+            <small>locked claims</small>
+          </div>
+        </div>
+
+        <label class="text-load compact">
+          <span>Search loaded RAW</span>
+          <input id="searchInput" type="search" placeholder="actor, word, or E01-L###" />
+        </label>
+
+        <div class="switch-row">
+          <label><input id="showOnlySelected" type="checkbox" /> Show selected block only</label>
+          <label><input id="showClaims" type="checkbox" checked /> Show claim badges</label>
+        </div>
+      </section>
+
+      <section class="panel map-panel" aria-labelledby="map-title">
+        <div class="section-head">
+          <div>
+            <h2 id="map-title">Character Breakdown</h2>
+            <p class="muted">Click a block to highlight the exact E01 source lines.</p>
+          </div>
+          <select id="relationFilter" aria-label="Filter relationship">
+            <option value="all">All characters</option>
+          </select>
+        </div>
+        <div id="blockList" class="block-list"></div>
+      </section>
+
+      <section class="panel reader" aria-labelledby="reader-title">
+        <div class="section-head">
+          <div>
+            <h2 id="reader-title">Episode 01 RAW Lines</h2>
+            <p id="readerHint" class="muted">Load the RAW file to see exact line text.</p>
+          </div>
+          <div class="reader-actions">
+            <button id="prevHitBtn" type="button">Prev hit</button>
+            <button id="nextHitBtn" type="button">Next hit</button>
+          </div>
+        </div>
+        <div id="rawLines" class="raw-lines empty-state">
+          No RAW loaded yet.
+        </div>
+      </section>
+
+      <section class="panel director" aria-labelledby="director-title">
+        <div class="section-head">
+          <div>
+            <h2 id="director-title">Director Understanding</h2>
+            <p class="muted">Not summary. Each point is either source-locked or marked for author check.</p>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="claims" type="button">Understanding</button>
+          <button class="tab" data-tab="carry" type="button">Carry to E02</button>
+          <button class="tab" data-tab="questions" type="button">Ask Author</button>
+          <button class="tab" data-tab="guard" type="button">Vague Guard</button>
+        </div>
+
+        <div id="claimsTab" class="tab-page active"></div>
+        <div id="carryTab" class="tab-page"></div>
+        <div id="questionsTab" class="tab-page"></div>
+        <div id="guardTab" class="tab-page"></div>
+      </section>
+    </main>
+
+    <script src="./episode1-map.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
